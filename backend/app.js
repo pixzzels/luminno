@@ -38,6 +38,8 @@ app.use(
   })
 );
 
+app.use(routes);
+
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
   const err = new Error("The requested resource couldn't be found.");
@@ -68,7 +70,4 @@ app.use((err, _req, res, _next) => {
     stack: isProduction ? null : err.stack,
   });
 });
-
-app.use(routes);
-
 module.exports = app;
