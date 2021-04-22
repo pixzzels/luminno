@@ -1,4 +1,6 @@
 'use strict';
+const { Validator } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
     username: {
@@ -27,8 +29,23 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
-  }, {});
-  User.associate = function(models) {
+  },
+    {
+      defaultScope: {
+        attributes: {
+          exclude: ['hassedPassword', 'email', 'createdAt', 'updatedAt'],
+        },
+      },
+      scopes: {
+        currentUser: {
+          attributes: { exclude: ['hashedPassword'] },
+        },
+        loginUser: {
+          attributes: {},
+        },
+      },
+    });
+  User.associate = function (models) {
     // associations can be defined here
   };
   return User;
