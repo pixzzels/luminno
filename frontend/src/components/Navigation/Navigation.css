@@ -1,0 +1,9 @@
+ul {
+  color: pink;
+  background-color: lightblue;
+}
+
+li {
+  padding: 10px;
+  padding-right: 15px;
+}
