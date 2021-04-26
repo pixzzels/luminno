@@ -7,8 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
   }, {});
-  Category.associate = function(models) {
+  Category.associate = function (models) {
     // associations can be defined here
+    Category.belongsTo(models.Listing, { foreignKey: 'category_id' })
+
   };
   return Category;
 };

@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tags_id: {
+      tag_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      listings_id: {
+      listing_id: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
