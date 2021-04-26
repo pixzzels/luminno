@@ -1,9 +1,46 @@
-ul {
+.navBar__main {
   color: pink;
   background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 li {
   padding: 10px;
   padding-right: 15px;
+  list-style: none;
+}
+
+.navBar__upper-container {
+  /* width: 2000px; */
+}
+
+.navBar__search {
+  height: 40px;
+  width: 600px;
+  border-radius: 10px;
+  padding-left: 15px;
+  /* flex-grow: 3; */
+  /* width: 90%; */
+  margin-top: 15px;
+}
+
+.brandName {
+  font-size: 40px;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
+.navBar__lower {
+  /* width: 100%; */
+  /* display: flex; */
+  /* flex-wrap: nowrap; */
+}
+
+
+.navBar__search-icon {
+  border-radius: 10px;
+  width: 50px;
+  height: 40px;
 }
