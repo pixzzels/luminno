@@ -7,8 +7,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
   }, {});
-  Tag.associate = function(models) {
+  Tag.associate = function (models) {
     // associations can be defined here
+    Tag.belongsToMany(models.Listing, {
+      foreignKey: 'tag_id',
+      otherKey: 'listing_id',
+      through: 'listingsTag'
+    });
   };
   return Tag;
 };
