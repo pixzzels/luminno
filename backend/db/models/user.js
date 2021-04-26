@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       defaultScope: {
         attributes: {
-          exclude: ['hassedPassword', 'email', 'createdAt', 'updatedAt'],
+          exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
         },
       },
       scopes: {
@@ -50,9 +50,9 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
   };
 
-  User.prototype.toSafeObject = function () {
-    const { id, username, email } = this; // remember, this cannot be an arrow function
-    return { id, username, email }; // context will be the User instance
+  User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function
+    const { id, username, email } = this; // context will be the User instance
+    return { id, username, email };
   };
 
   User.prototype.validatePassword = function (password) {

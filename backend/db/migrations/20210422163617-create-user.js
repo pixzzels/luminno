@@ -9,18 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       username: {
-        allowNull: false,
         type: Sequelize.STRING(30),
-        unique: true
+        allowNull: false,
+        unique: true,
       },
       email: {
-        allowNull: false,
         type: Sequelize.STRING(256),
+        allowNull: false,
         unique: true,
       },
       hashedPassword: {
+        type: Sequelize.STRING.BINARY,
         allowNull: false,
-        type: Sequelize.STRING.BINARY
       },
       createdAt: {
         allowNull: false,
@@ -31,7 +31,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-
       }
     });
   },
