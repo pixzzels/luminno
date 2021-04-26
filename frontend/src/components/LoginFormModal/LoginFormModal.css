@@ -1,0 +1,17 @@
+form.modalForm{
+  height: 400px;
+  border: 2px gold solid;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form.modalForm h1 {
+  color: orange;
+  margin-top: 0px;
+}
+
+form.modalForm label.usernameLabel {
+  /* color:pink; */
+  /* width: 100%; */
+}

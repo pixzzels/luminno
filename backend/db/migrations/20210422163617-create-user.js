@@ -8,19 +8,30 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      admin: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN, defaultValue: false
+      },
       username: {
         allowNull: false,
         type: Sequelize.STRING(30),
-        unique: true
+        unique: true,
       },
       email: {
         allowNull: false,
         type: Sequelize.STRING(256),
         unique: true,
       },
-      hashedPassword: {
+      hashed_password: {
         allowNull: false,
-        type: Sequelize.STRING.BINARY
+        type: Sequelize.STRING.BINARY,
+      },
+      profile_img: {
+        type: Sequelize.STRING(200)
+      },
+      funds: {
+        allowNull: false,
+        type: Sequelize.FLOAT()
       },
       createdAt: {
         allowNull: false,
@@ -31,7 +42,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-
       }
     });
   },
