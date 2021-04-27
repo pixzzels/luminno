@@ -49,7 +49,7 @@ router.post(
       user1.funds = 10000;
       await user.save();
       console.log(`User ${user1.username} logged in with a cash balance of ${user1.funds}`)
-      console.log(user1)
+      // console.log(user1)
 
       // guestUserToDefault();
     }
