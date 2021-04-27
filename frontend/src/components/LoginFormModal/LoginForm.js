@@ -29,7 +29,7 @@ function LoginForm() {
         <h1>Log in!</h1>
         <button
         type="button"
-        onClick={}
+        // onClick={}
         >Register!</button>
       </div>
       <ul className='errors-list'>
@@ -58,7 +58,8 @@ function LoginForm() {
         </label>
       </div>
       <button type="submit">Log In</button>
-      <h1>Don't Have An Account?</h1>
+      <button type="submit">Demo Log In</button>
+      {/* <h1>Don't Have An Account?</h1> */}
     </form>
   );
 }

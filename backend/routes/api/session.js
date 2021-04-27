@@ -19,6 +19,10 @@ const validateLogin = [
   handleValidationErrors,
 ];
 
+// const guestUserToDefault = async(user) => {
+//   const clear shopping
+// }
+
 // Log in
 router.post(
   '/',
@@ -27,6 +31,9 @@ router.post(
     const { credential, password } = req.body;
 
     const user = await User.login({ credential, password });
+    // const user1 = await User.findOne({
+    //   where: { email },
+    // })
 
     if (!user) {
       const err = new Error('Login failed');
@@ -36,13 +43,22 @@ router.post(
       return next(err);
     }
 
+    if (user.id = 1) {
+      user.funds = 10000;
+      await user.save();
+      console.log(`User ${user.username} logged in with a cash balance of ${user.funds}`)
+      // guestUserToDefault();
+    }
+
     await setTokenCookie(res, user);
 
     return res.json({
       user,
     });
+
   }),
 );
+
 
 // Log out
 router.delete(
