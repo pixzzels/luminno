@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
-import Category from '../Category'
+import Categories from '../Categories'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -23,13 +23,12 @@ function Navigation({ isLoaded }) {
     );
   }
 
-  
-
+  // style={{textDecoration: 'none', color: 'blue'}}
   return (
     <div className="navBar">
       <div className='navBar__main'>
         <li className='brandName'>
-          <NavLink exact to="/">Etsy</NavLink>
+          <NavLink className='brandName'exact to="/">Etsy</NavLink>
         </li>
         <div>
           <form className="navBar__upper-container">
@@ -48,7 +47,7 @@ function Navigation({ isLoaded }) {
         </li>
       </div>
       <div className='navBar__lower'>
-        {/* <Category name={}/> */}
+        <Categories />
       </div>
     </div>
   );

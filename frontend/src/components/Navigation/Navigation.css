@@ -1,6 +1,6 @@
 .navBar__main {
   color: pink;
-  background-color: lightblue;
+  background-color: #FAFDF3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +11,6 @@ li {
   padding-right: 15px;
   list-style: none;
 }
-
 
 .navBar__search {
   height: 40px;
@@ -27,6 +26,7 @@ li {
   font-size: 40px;
   text-decoration: none;
   padding-left: 20px;
+  color: orange;
 }
 
 .navBar__search-icon {

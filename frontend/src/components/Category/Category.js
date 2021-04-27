@@ -1,11 +1,13 @@
+import { NavLink } from 'react-router-dom';
 
+import './Category.css'
 
-function Category({ name }) {
+function Category({ category }) {
 
   return (
-    <div>
-
-    </div>
+    <NavLink className="category-navLink" key={category.name} to={`category/${category.id}`}>
+      {category.name}
+    </NavLink>
   )
 }
 
