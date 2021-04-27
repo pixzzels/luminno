@@ -31,9 +31,10 @@ router.post(
     const { credential, password } = req.body;
 
     const user = await User.login({ credential, password });
-    // const user1 = await User.findOne({
-    //   where: { email },
-    // })
+    const user1 = await User.findOne({
+      where: { email: 'demo@gmail.com' },
+    })
+
 
     if (!user) {
       const err = new Error('Login failed');
@@ -42,11 +43,14 @@ router.post(
       err.errors = ['The provided credentials were invalid.'];
       return next(err);
     }
+    // console.log(user.email)
 
-    if (user.id = 1) {
-      user.funds = 10000;
+    if (user1) {
+      user1.funds = 10000;
       await user.save();
-      console.log(`User ${user.username} logged in with a cash balance of ${user.funds}`)
+      console.log(`User ${user1.username} logged in with a cash balance of ${user1.funds}`)
+      console.log(user1)
+
       // guestUserToDefault();
     }
 
@@ -80,7 +84,7 @@ router.get(
     const { user } = req;
     if (user) {
       return res.json({
-        user:user.toSafeObject()
+        user: user.toSafeObject()
       });
     } else return res.json({});
   }
