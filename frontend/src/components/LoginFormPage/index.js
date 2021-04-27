@@ -28,8 +28,8 @@ function LoginFormPage({ handleClick }) {
 
   const demoSubmit = (e) => {
     e.preventDefault();
-    setCredential('demo')
-    setPassword('password')
+    const credential = 'demo'
+    const password = 'password'
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
         const data = await res.json();

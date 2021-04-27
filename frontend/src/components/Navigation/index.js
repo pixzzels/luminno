@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import Category from '../Category'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -21,6 +22,8 @@ function Navigation({ isLoaded }) {
       </>
     );
   }
+
+  
 
   return (
     <div className="navBar">
@@ -45,6 +48,7 @@ function Navigation({ isLoaded }) {
         </li>
       </div>
       <div className='navBar__lower'>
+        {/* <Category name={}/> */}
       </div>
     </div>
   );
