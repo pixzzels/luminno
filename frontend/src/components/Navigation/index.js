@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
-import Categories from '../Categories'
+import Categories from '../Categories';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {

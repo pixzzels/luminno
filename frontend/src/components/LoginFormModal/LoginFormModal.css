@@ -1,6 +1,6 @@
 form.modalForm {
-  height: 600px;
-  width: 500px;
+  height: 500px;
+  width: 400px;
   border: 2px gold solid;
   margin: 20px;
   padding: 20px;
@@ -37,7 +37,7 @@ form.modalForm button {
   margin-bottom: 15px;
   padding: 5px;
   background-color: peachpuff;
-  border:1px solid peru;
+  border: 1px solid peru;
   border-radius: 5px;
 }
 
