@@ -10,7 +10,8 @@ module.exports = {
       },
       admin: {
         allowNull: false,
-        type: Sequelize.BOOLEAN, defaultValue: false
+        type: Sequelize.BOOLEAN, 
+        defaultValue: false
       },
       username: {
         allowNull: false,
