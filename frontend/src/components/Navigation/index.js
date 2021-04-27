@@ -17,7 +17,7 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }
@@ -36,7 +36,7 @@ function Navigation({ isLoaded }) {
               placeholder='Search'>
             </input>
             <button className="navBar__search-icon">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
             </button>
           </form>
         </div>
