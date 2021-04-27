@@ -17,11 +17,6 @@ form.modalForm h1 {
   margin-top: 0px;
 }
 
-/* form.modalForm label.usernameLabel { */
-  /* color:pink; */
-  /* width: 100%; */
-/* } */
-
 form.modalForm ul.errors-list {
   color: rgb(175, 90, 104);
 }
