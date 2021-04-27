@@ -1,0 +1,5 @@
+.categories-container {
+  color: red;
+  border: 1px solid black;
+  display: flex;
+}

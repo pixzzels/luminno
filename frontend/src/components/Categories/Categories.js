@@ -1,14 +1,11 @@
-
-
 import Category from '../Category'
 
+import './Categories.css'
+
 function Categories() {
-  // useEffect(() => {
-  //   dispatch(getCategories())
-  // },[dispatch]);
 
   return (
-    <div>
+    <div className="categories-container">
       <Category />
     </div>
   )

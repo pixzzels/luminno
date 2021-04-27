@@ -23,13 +23,12 @@ function Navigation({ isLoaded }) {
     );
   }
 
-  
-
+  // style={{textDecoration: 'none', color: 'blue'}}
   return (
     <div className="navBar">
       <div className='navBar__main'>
         <li className='brandName'>
-          <NavLink exact to="/">Etsy</NavLink>
+          <NavLink className='brandName'exact to="/">Etsy</NavLink>
         </li>
         <div>
           <form className="navBar__upper-container">

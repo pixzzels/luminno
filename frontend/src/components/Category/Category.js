@@ -27,16 +27,15 @@ function Category() {
 
   return (
     <div>
-      test1
       {category.map((category) => {
         return (
           <NavLink key={category.name} to={`category/${category.id}`}>
-            <div>
-              <div>
-                <div className="primary-text">{category.name}</div>
 
-              </div>
+            <div>
+              <div className="primary-text">{category.name}</div>
+
             </div>
+
           </NavLink>
         );
       })}
