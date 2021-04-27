@@ -1,5 +1,30 @@
 .categories-container {
+  padding-top: 15px;
   color: red;
-  border: 1px solid black;
+  border-bottom: 2px solid lightgrey;
   display: flex;
+  justify-content: space-around;
+  background-color: #FAFDF3;
+}
+
+.category-link {
+  border-bottom: none;
+  transition: border-bottom 2s;
+  width: fit-content;
+}
+
+.category-link:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  margin-top:15px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.category-link:hover:after {
+  width: 100%;
+  background: black;
 }
