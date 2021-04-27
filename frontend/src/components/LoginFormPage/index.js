@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 import './LoginForm.css'
 
-function LoginFormPage() {
+function LoginFormPage({ handleClick }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState('');
@@ -27,29 +27,42 @@ function LoginFormPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='login-form'>
-      <ul>
-        {errors.map((error, idx) => <li className='error-list' key={idx}>{error}</li>)}
+    <form className='modalForm' onSubmit={handleSubmit}>
+      <div className='login-register'>
+        <h1>Log in!</h1>
+        <button
+          type="button"
+          onClick={handleClick}
+        >Register!</button>
+      </div>
+      <ul className='errors-list'>
+        {errors.map((error, idx) => (
+          <li key={idx}>{error}</li>
+        ))}
       </ul>
-      <label>
-        Username or Email
+      <div className='login-container'>
+        <label className='usernameLabel'>
+          Username or Email
         <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </label>
+        <label className='passwordLabel'>
+          Password
         <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+      </div>
       <button type="submit">Log In</button>
+      <button type="submit">Demo Log In</button>
+      {/* <h1>Don't Have An Account?</h1> */}
     </form>
   );
 }
