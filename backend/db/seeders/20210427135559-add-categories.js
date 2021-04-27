@@ -10,7 +10,7 @@ module.exports = {
       { name: "Earrrings" },
       { name: "Bracelet" },
       { name: "Charm | Keychain | Pin" },
-
+      { name: "On Sale" },
     ], {});
   },
 
