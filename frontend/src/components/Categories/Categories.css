@@ -1,5 +1,5 @@
 .categories-container {
-  padding-top: 15px;
+  /* padding-top: 15px; */
   color: red;
   border-bottom: 2px solid lightgrey;
   display: flex;
@@ -9,7 +9,6 @@
 
 .category-link {
   border-bottom: none;
-  transition: border-bottom 2s;
   width: fit-content;
 }
 
@@ -21,10 +20,10 @@
   margin-top:15px;
   width: 0px;
   background: transparent;
-  transition: width .5s ease, background-color .5s ease;
+  transition: width 1s ease, background-color .5s ease;
 }
 
 .category-link:hover:after {
   width: 100%;
-  background: black;
+  background: grey;
 }
