@@ -11,11 +11,18 @@ function Categories() {
   const category = useSelector(state => {
     // creates an array of the object values
     const listings = Object.values(state.listings)
-    console.log("listings", listings)
+    // console.log("listings", listings)
     return listings;
     // return state.listings.list
-    // return state.category.list?.map(id => state.category[id]);
   });
+
+  // const sortList = (list) => {
+  //   return list.sort((categoryA, categoryB) => {
+  //     return categoryB.id - categoryA.id;
+  //   })
+  // };
+
+  // let sortedList = sortList(category)
 
   const dispatch = useDispatch();
 
@@ -26,6 +33,8 @@ function Categories() {
   if (!category) {
     return null;
   }
+  // console.log("category", category)
+  // category.pop();
   return (
     <div className="categories-container">
       {category.map((category) => {
