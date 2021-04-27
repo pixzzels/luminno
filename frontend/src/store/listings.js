@@ -22,7 +22,7 @@ const listingsReducer = (state = initialState, action) => {
     case LOAD_CATEGORY: {
       const allCategories = {};
       action.list.forEach(category => {
-        console.log('category', category)
+        // console.log('category', category)
         allCategories[category.id] = category;
       });
       return {
