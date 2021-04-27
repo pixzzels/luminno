@@ -45,3 +45,7 @@ form.modalForm button {
   border:1px solid peru;
   border-radius: 5px;
 }
+
+button {
+  cursor: pointer;
+}

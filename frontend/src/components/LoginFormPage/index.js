@@ -61,7 +61,7 @@ function LoginFormPage({ handleClick }) {
         </label>
       </div>
       <button type="submit">Log In</button>
-      <button type="submit">Demo Log In</button>
+      <button type="button">Demo Log In</button>
       {/* <h1>Don't Have An Account?</h1> */}
     </form>
   );

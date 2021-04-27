@@ -81,7 +81,7 @@ function SignupFormPage({ handleClick }) {
         </label>
       </div>
       <button type="submit">Sign Up</button>
-      <button type="submit">Demo Log In</button>
+      <button type="button">Demo Log In</button>
     </form>
   );
 }
