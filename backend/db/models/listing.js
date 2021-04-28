@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Listing = sequelize.define('Listing', {
     name: {
       allowNull: false,
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(500),
     },
     listing_img: {
       allowNull: false,
@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     description: {
       allowNull: false,
-      type: DataTypes.STRING(500),
+      type: DataTypes.STRING,
     },
     price: {
       allowNull: false,

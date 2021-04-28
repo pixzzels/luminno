@@ -25,7 +25,7 @@ module.exports = {
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 2},
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 2},
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 3},
-      {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 3},
+      {name: "Custom Name Necklace with Curb Chain in Gold, Sterling Silver, Rose Gold • Choker Necklace • Personalized Gift For Her • NH65F85", listing_img: image.imageUrl(), description: "♥ Custom Name Necklace with Curb Chain ♥ The most unique jewelry you can find, perfect gift for you and your loved one ♥", price: 37.00, category_id: 3},
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 3},
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 3},
       {name: commerce.productName(), listing_img: image.imageUrl(), description: commerce.productDescription(), price: commerce.price(), category_id: 3},
