@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Category from '../Category'
-import { getCategories } from '../../store/listings'
+import { getCategories } from '../../store/category'
 
 import './Categories.css'
 
@@ -10,9 +10,9 @@ function Categories() {
   // const { id } = useParams();
   const category = useSelector(state => {
     // creates an array of the object values
-    const listings = Object.values(state.listings)
+    const categories = Object.values(state.category)
     // console.log("listings", listings)
-    return listings;
+    return categories;
     // return state.listings.list
   });
 

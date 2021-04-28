@@ -1,0 +1,33 @@
+.listingsBar-container {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: fit-content;
+}
+
+.listings-container-cat {
+  display:flex;
+}
+
+.listing {
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.listing-image {
+  max-height: 150px;
+  max-width: 150px;
+
+}
+
+.listing:hover {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+}
