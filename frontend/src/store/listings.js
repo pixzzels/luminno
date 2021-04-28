@@ -8,10 +8,10 @@ const load = list => ({
   list,
 });
 
-const showOne = listing => ({
-  type: SHOW_ONE,
-  listing,
-});
+// const showOne = listing => ({
+//   type: SHOW_ONE,
+//   listing,
+// });
 
 
 export const getListings = () => async dispatch => {
@@ -23,12 +23,13 @@ export const getListings = () => async dispatch => {
   }
 };
 
-export const showOneListing = (listingId) => async dispatch => {
-  const res = await fetch(`/api/listings/${listingId}`)
-  if (!res.ok) throw res;
-  const listing = await res.json();
-  dispatch(showOne(listingId))
-}
+// export const showOneListing = (listingId) => async dispatch => {
+//   const res = await fetch(`/api/listings/${listingId}`)
+//   if (!res.ok) throw res;
+//   const listing = await res.json();
+//   console.log('listing', listing)
+//   dispatch(showOne(listing))
+// }
 
 const initialState = []
 
@@ -46,24 +47,24 @@ const listingsReducer = (state = initialState, action) => {
         list: action.list,
       };
     }
-    case SHOW_ONE: {
-      if (!state[action.listing.id]) {
-        const newState = {
-          ...state,
-          [action.listing.id]: action.listing
-        };
-        const listingList = newState.list.map(id => newState[id]);
-        listingList.push(action.listing);
-        return newState;
-      }
-      return {
-        ...state,
-        [action.listing.id]: {
-          ...state[action.listing.id],
-          ...action.listing,
-        }
-      };
-    }
+    // case SHOW_ONE: {
+    //   if (!state[action.listing.id]) {
+    //     const newState = {
+    //       ...state,
+    //       [action.listing.id]: action.listing
+    //     };
+    //     const listingList = newState.list.map(id => newState[id]);
+    //     listingList.push(action.listing);
+    //     return newState;
+    //   }
+    //   return {
+    //     ...state,
+    //     [action.listing.id]: {
+    //       ...state[action.listing.id],
+    //       ...action.listing,
+    //     }
+    //   };
+    // }
     default:
       return state;
   }

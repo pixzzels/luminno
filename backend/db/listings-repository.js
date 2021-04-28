@@ -9,8 +9,8 @@ async function listListing() {
   return await Listing.findAll();
 }
 
-async function listOneListing() {
-  return await Listing.findByPk();
+async function listOneListing(id) {
+  return await Listing.findByPk(id);
 }
 
 module.exports = {

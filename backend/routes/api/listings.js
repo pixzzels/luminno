@@ -12,8 +12,9 @@ router.get('/', asyncHandler(async function (req, res) {
 }));
 
 router.get('/:id', asyncHandler(async function (req, res) {
+  console.log("req.params", req.params)
   const listing = await ListingsRepository.listOneListing(req.params.id);
-  const { id } = req.params.id;
+  // const { id } = req.params.id;
   return res.json(listing);
 }));
 

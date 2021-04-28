@@ -31,35 +31,27 @@ function ListingsBar({ category }) {
           return (
             <>
               {listing.category_id === category.id &&
-                <div className="listing">
-                  <div>
-                    <img
-                      className="listing-image"
-                      alt={listing.name}
-                      src={`${listing.listing_img}`}
-                    />
+                <NavLink className="listing-page" key={listing.name} to={`/listings/${listing.id}`}>
+                  <div className="listingsBar-container__listing">
+                    <div>
+                      <img
+                        className="listingsBar-container__listing-image"
+                        alt={listing.name}
+                        src={`${listing.listing_img}`}
+                      />
+                    </div>
+                    <div className="listingsBar-container__listing-name">
+                      {listing.name}
+                    </div>
+                    <div className="listingsBar-container__listing-price">
+                      ${listing.price}
+                    </div>
                   </div>
-                  <div>
-                  <NavLink className="listing-page" key={listing.name} to={`/listings/${listing.id}`}>{listing.name}</NavLink>
-                  </div>
-
-                </div>
+                </NavLink>
               }
             </>
           )
         })}
-        {/* {allListings.map((listing) => {
-          return (
-            <div className="one-listing">
-              <div>
-              {listing.category_id === category.id ? listing.listing_img : null}
-              </div>
-              <div className='listing'>
-                {listing.category_id === category.id ? listing.name : null}
-              </div>
-            </div>
-          );
-        })} */}
       </div>
     </div>
   )

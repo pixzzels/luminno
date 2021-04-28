@@ -6,6 +6,8 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/HomePage";
 import ListingPage from "./components/ListingPage";
 
+import './index.css'
+
 
 function App() {
   const dispatch = useDispatch();
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation className="Navigation" isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">

@@ -1,3 +1,8 @@
+.listing-page {
+  text-decoration: none;
+  color: black;
+}
+
 .listingsBar-container {
   border: 2px solid pink;
   display: flex;
@@ -10,29 +15,32 @@
   display:flex;
 }
 
-.listing {
+.listingsBar-container__listing {
   padding: 15px;
   border: 1px solid lightgray;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
+}
+
+.listingsBar-container__listing:hover {
+  border: 1px solid blue;
+}
+
+.listingsBar-container__listing-image {
+  max-height: 200px;
+  max-width: 200px;
   align-items: center;
 }
 
-.listing-image {
-  max-height: 150px;
-  max-width: 150px;
-
+.listingsBar-container__listing-name {
+  height: 20px;
+  overflow:hidden;
+  /* flex-wrap: nowrap; */
 }
 
-.listing:hover {
-  border: 1px solid blue;
-  display: flex;
-  flex-direction: column;
+.listingsBar-container__listing-price{
+  font-weight: bold;
 }
 
-.listing-page {
-  text-decoration: none;
-  color: black;
-}

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { showOneListing } from '../../store/listings'
+import { showOneListing, getListings } from '../../store/listings'
 // import Button from '../Button';
 
 import './ListingPage.css'
@@ -20,8 +20,8 @@ function ListingPage() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(showOneListing(id))
-  }, [id, dispatch])
+    dispatch(getListings())
+  }, [])
 
   if (!oneListing) {
     return null;
