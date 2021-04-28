@@ -6,13 +6,16 @@ const ListingsRepository = require('../../db/listings-repository')
 
 const router = express.Router();
 
-// List Categories
-router.get('/', asyncHandler(async function(_req, res) {
-  const category = await ListingsRepository.listCategory();
-  // console.log("category", category)
-  return res.json(category);
+router.get('/', asyncHandler(async function( req, res) {
+  const listing = await ListingsRepository.listListing();
+  return res.json(listing);
 }));
 
+router.get('/:id', asyncHandler(async function(req, res) {
+  const listing = await ListingsRepository.listOneListing(req.params.id);
+  
+  return res.json(listing);
+}));
 
 
 module.exports = router;

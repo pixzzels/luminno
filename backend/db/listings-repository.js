@@ -5,6 +5,16 @@ async function listCategory() {
   return await Category.findAll();
 }
 
+async function listListing() {
+  return await Listing.findAll();
+}
+
+async function listOneListing() {
+  return await Listing.findByPk();
+}
+
 module.exports = {
   listCategory,
+  listListing,
+  listOneListing,
 };
