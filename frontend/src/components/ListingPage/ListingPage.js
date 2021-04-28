@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { showOneListing } from '../../store/listings'
-import Button from '../Button';
+// import Button from '../Button';
 
 import './ListingPage.css'
 
@@ -29,7 +29,7 @@ function ListingPage() {
 
 
   return (
-    <div>
+    <div className="listing-page-info-review">
       <div className="listing-info-container">
         <div className="listing-image-container">
           <img
@@ -50,6 +50,9 @@ function ListingPage() {
             {oneListing.description}
           </div>
         </div>
+      </div>
+      <div className="listing-page-reviews">
+        Reviews
       </div>
 
     </div>

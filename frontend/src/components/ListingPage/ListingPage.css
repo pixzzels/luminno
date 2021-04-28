@@ -1,3 +1,8 @@
+.listing-page-info-review {
+  display: flex;
+  flex-direction: column;
+}
+
 .listing-info-container {
   display: flex;
   justify-content: space-between;
@@ -38,4 +43,9 @@
 .listing-description {
   margin: 30px;
 
+}
+
+.listing-page-reviews {
+  width: 100%;
+  border:1px solid lightslategray;
 }

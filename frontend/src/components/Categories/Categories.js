@@ -39,7 +39,7 @@ function Categories() {
     <div className="categories-container">
       {category.map((category) => {
         return (
-          <div className='category-link'>
+          <div key={category.name} className='category-link'>
             <Category category={category} />
           </div>
         );
