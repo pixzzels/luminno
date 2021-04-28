@@ -4,16 +4,46 @@
 }
 
 .listingsBar-container {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+  /* max-width: fit-content; */
+  max-height: 300px;
+
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  max-width: fit-content;
+  /* overflow: hidden; */
+  /* width:90em; */
 }
 
-.listings-container-cat {
+div.listings-container-cat {
+  max-width: 1000px;
+  max-height: 300px;
   display:flex;
+  /* margin:  10px 10px 20px 10px; */
+  background-color: #fdf2ea;
+  overflow: auto;
+  white-space: nowrap;
+  /* border: 2px solid #52535f; */
+  border-radius: 5px;
+  /* box-shadow: inset 0px 0px 20px 10px rgba(160, 160, 160, 0.6); */
 }
+
+div.listingsBar-container__listing {
+  max-width: 200px;
+  max-height: 200px;
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+
+/* .listings-container-cat {
+  display:flex;
+} */
 
 .listingsBar-container__listing {
   padding: 15px;
@@ -34,9 +64,9 @@
   align-items: center;
 }
 
-.listingsBar-container__listing-name {
+div.listingsBar-container__listing-name {
   height: 20px;
-  overflow:hidden;
+  overflow: hidden;
   /* flex-wrap: nowrap; */
 }
 

@@ -20,7 +20,6 @@ function Listings() {
 
   return (
     <div className="listings-container">
-      <h2>My listings</h2>
       {category.map((category) => {
         return (
           <div key={category.name} className='category-link'>
