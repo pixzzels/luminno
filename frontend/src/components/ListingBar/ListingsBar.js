@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 import { getListings } from '../../store/listings'
 
@@ -39,7 +40,7 @@ function ListingsBar({ category }) {
                     />
                   </div>
                   <div>
-                    {listing.name}
+                  <NavLink className="listing-page" key={listing.name} to={`/listings/${listing.id}`}>{listing.name}</NavLink>
                   </div>
 
                 </div>

@@ -6,14 +6,14 @@ const ListingsRepository = require('../../db/listings-repository')
 
 const router = express.Router();
 
-router.get('/', asyncHandler(async function( req, res) {
+router.get('/', asyncHandler(async function (req, res) {
   const listing = await ListingsRepository.listListing();
   return res.json(listing);
 }));
 
-router.get('/:id', asyncHandler(async function(req, res) {
+router.get('/:id', asyncHandler(async function (req, res) {
   const listing = await ListingsRepository.listOneListing(req.params.id);
-  
+  const { id } = req.params.id;
   return res.json(listing);
 }));
 

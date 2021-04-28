@@ -1,6 +1,6 @@
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS';
 
-const ADD_ONE = 'listings/ADD_ONE';
+const SHOW_ONE = 'listings/SHOW_ONE';
 
 
 const load = list => ({
@@ -8,8 +8,8 @@ const load = list => ({
   list,
 });
 
-const addOneListing = listing => ({
-  type: ADD_ONE,
+const showOne = listing => ({
+  type: SHOW_ONE,
   listing,
 });
 
@@ -23,12 +23,11 @@ export const getListings = () => async dispatch => {
   }
 };
 
-export const getOneListing = (listingId) => async dispatch => {
+export const showOneListing = (listingId) => async dispatch => {
   const res = await fetch(`/api/listings/${listingId}`)
   if (!res.ok) throw res;
   const listing = await res.json();
-  // console.log("FETCH LISTING: ",listing)
-  dispatch(addOneListing(listing))
+  dispatch(showOne(listingId))
 }
 
 const initialState = []
@@ -47,7 +46,7 @@ const listingsReducer = (state = initialState, action) => {
         list: action.list,
       };
     }
-    case ADD_ONE: {
+    case SHOW_ONE: {
       if (!state[action.listing.id]) {
         const newState = {
           ...state,
