@@ -59,8 +59,10 @@ div.listingsBar-container__listing {
 }
 
 .listingsBar-container__listing-image {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 110px;
+  max-width: 150px;
+  float: inherit;
+
   align-items: center;
 }
 

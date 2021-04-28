@@ -16,6 +16,7 @@ function Categories() {
     // return state.listings.list
   });
 
+  // console.log('category', category)
   // const sortList = (list) => {
   //   return list.sort((categoryA, categoryB) => {
   //     return categoryB.id - categoryA.id;
