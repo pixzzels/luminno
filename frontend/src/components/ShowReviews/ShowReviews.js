@@ -48,8 +48,12 @@ function ShowReviews({ listingId }) {
   // console.log("listingId", listingId)
   const reviews = useSelector(state => {
     const allReviews = Object.values(state.review)
+    allReviews.sort((a, b) => {
+      return b.id - a.id
+    })
     return allReviews;
   })
+
   const sessionUser = useSelector(state => state.session.user);
 
   const dispatch = useDispatch();

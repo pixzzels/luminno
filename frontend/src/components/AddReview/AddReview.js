@@ -1,21 +1,26 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import { createReview } from '../../store/reviews'
 
 import './AddReview.css'
 
 
-const AddReview = () => {
+const AddReview = ({ listing_id }) => {
 
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  const user_id = useSelector(state => state.session.user.id);
   const [description, setDescription] = useState('')
   const [score, setScore] = useState('');
   const [errors, setErrors] = useState([]);
+  console.log('score', score)
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (score.isNaN) setErrors(...errors, "Please Select a Score")
+    if (description.length === '') setErrors(...errors, "Please add a description")
+    if (description.length < 5) setErrors(...errors, 'Please enter a description more than 5 characters')
     setErrors([]);
-    return
+    return dispatch(createReview({ description, score, user_id, listing_id }))
   }
   return (
     <section className="reviewForm-container">
@@ -26,16 +31,18 @@ const AddReview = () => {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label>Select your star rating!</label>
-        <select className="rating-select">
-          <option>5 Stars</option>
-          <option>2 Stars</option>
-          <option>4 Stars</option>
-          <option>3 Stars</option>
-          <option>1 Star</option>
+        <label htmlFor="score">Select your star rating!</label>
+        <select name="score" value={score} className="rating-select"
+          onChange={e => setScore(e.target.value)}>
+          <option>Give A Rating</option>
+          <option value={5}>5 Stars</option>
+          <option value={4}>4 Stars</option>
+          <option value={3}>3 Stars</option>
+          <option value={2}>2 Stars</option>
+          <option value={1}>1 Star</option>
 
         </select>
-        <label forHtml="description">Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
           className="review-description"
           name="description"
