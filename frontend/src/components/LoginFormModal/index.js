@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import Button from '../Button';
 
 
-function LoginFormModal() {
+function LoginFormModal( {text = 'Log In'}) {
   const [showModal, setShowModal] = useState(false);
 
   const onClick = () => {
@@ -14,7 +14,7 @@ function LoginFormModal() {
   return (
     <>
       {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
-      <Button onClick={onClick} text={'Log In'}/>
+      <Button onClick={onClick} text={text}/>
       {showModal && (
         <Modal className="login-register-modal" onClose={() => setShowModal(false)}>
           <LoginForm />

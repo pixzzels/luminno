@@ -1,11 +1,21 @@
+
+div.review-header {
+  display: flex;
+  padding: 10px;
+}
+
+div.review-header h2 {
+  margin-right: 25px;
+}
+
 .review-container {
-  border: 1px solid pink;
+  border-bottom: 1px solid grey;
   padding: 10px;
 }
 
 .review-owner {
-  margin-bottom: 6px;
-  border: 1px solid blue;
+  /* margin-bottom: 6px; */
+  /* border: 1px solid blue; */
   display: flex;
 }
 
@@ -15,15 +25,15 @@
 }
 
 .review-score {
-  border: 1px solid limegreen;
+  margin-bottom: 6px;
+
+  /* border: 1px solid limegreen; */
 }
 
 .star {
   height: 25px;
   width: 25px;
-  /* color: red; */
-  /* background-color: yellow; */
-  /* border: pink */
+
 }
 
 .review-profilepic {
@@ -55,4 +65,9 @@
 
 .review-information {
   padding-left: 48px;
+}
+
+.review-description {
+  font-size: 16px;
+  color:rgb(61, 61, 61);
 }

@@ -2,26 +2,22 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { getReviews } from '../../store/reviews'
+import LoginFormModal from '../LoginFormModal';
+import ReviewModal from '../ReviewModal'
+import AddReview from '../ReviewModal'
+
 
 import './ShowReviews.css';
 
-function ReviewScore({ listingId, reviews, reviewNum }) {
-
-  // let reviewScore;
-  // reviews.map((review) => {
-  //   if (review.id === listingId) {
-  //     // formattedDate = formatDate(review.User.createdAt)
-  //     reviewScore = review.score
-  //   }
-  // });
+function ReviewScore({ reviews, reviewNum }) {
 
   let reviewScoreArr = [];
-  console.log("reviewNum", reviewNum)
+  // console.log("reviewNum", reviewNum)
 
   for (let i = 0; i < reviewNum; i++) {
-    reviewScoreArr.push('yellow')
+    reviewScoreArr.push('khaki')
   }
-  console.log('initial arr', reviewScoreArr)
+  // console.log('initial arr', reviewScoreArr)
 
   if (reviewScoreArr.length < 5) {
     for (let i = reviewScoreArr.length; i < 5; i++) {
@@ -33,8 +29,8 @@ function ReviewScore({ listingId, reviews, reviewNum }) {
     <>
       {reviewScoreArr.map((color) => {
         return (
-          <svg className="star">
-            <path stroke="black" fill={color} d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z" />Î
+          <svg key={reviews.id} className="star">
+            <path stroke="black" strokeWidth="1.3" fill={color} d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z" />Î
           </svg>
         )
       })}
@@ -42,18 +38,16 @@ function ReviewScore({ listingId, reviews, reviewNum }) {
   )
 }
 
-function ShowReviews({ listingId }) {
 
+function ShowReviews({ listingId }) {
+  
   // console.log("listingId", listingId)
   const reviews = useSelector(state => {
     const allReviews = Object.values(state.review)
     return allReviews;
   })
-
-  // const reviews = useSelector(state => {
-  //   return state.review
-  // })
-
+  const sessionUser = useSelector(state => state.session.user);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -97,59 +91,36 @@ function ShowReviews({ listingId }) {
     }
   });
 
-  // let reviewScoreArr = [];
-
-  // for (let i = 0; i < reviewScore; i++) {
-  //   reviewScoreArr.push('star')
-  // }
-
-  // let reviewScoreArr = [];
-  // console.log("reviewSore", reviewScore)
-
-  // for (let i = 0; i < reviewScore; i++) {
-  //   reviewScoreArr.push('yellow')
-  // }
-  // console.log('initial arr', reviewScoreArr)
-
-  // if (reviewScoreArr.length < 5) {
-  //   for (let i = reviewScoreArr.length; i < 5; i++) {
-  //     reviewScoreArr.push('white')
-  //   }
-  // }
-
-  // console.log(reviewScoreArr)
+  let text;
 
 
-  // console.log(reviewScoreArr)
-
-  let reviewScoreArr = [1, 2, 3, 4, 5];
-
-
-
-
+  let sessionLinks;
+  if (sessionUser) {
+    text = 'Add Your Review!'
+    sessionLinks = (
+      <ReviewModal text={text} />
+    );
+  } else {
+    text = 'Log in to Review!'
+    sessionLinks = (
+      <>
+      <LoginFormModal text={text} />
+      </>
+    );
+  }
 
   console.log("reviews", reviews)
   return (
-    <div>
-      my review
+    <div className="big-review-container">
+      <div className="review-header">
+        <h2>Reviews</h2>
+        {sessionLinks}
+      </div>
       {reviews.map((review) => {
         return (
           <div key={review.id}>
             {review.listing_id === listingId &&
               <div className="review-container">
-                <div className='review-score'>
-                  {review.score}
-                  <ReviewScore listingId={listingId} reviews={reviews} reviewNum={review.score} />
-
-                  {/* {reviewScoreArr.map((color) => {
-                    return (
-                      <ReviewScore listingId={listingId} reviews={reviews} />
-                    )
-                  })} */}
-                  {/* <svg className="star">
-                    <path stroke="black" fill={color} d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z" />Î
-                  </svg> */}
-                </div>
                 <div className="review-owner">
                   {/* {console.log('username', review.User)} */}
                   <div className="review-user-container">
@@ -169,6 +140,10 @@ function ShowReviews({ listingId }) {
 
                 </div>
                 <div className="review-information">
+                  <div className='review-score'>
+                    {/* {review.score} */}
+                    <ReviewScore listingId={listingId} reviews={reviews} reviewNum={review.score} />
+                  </div>
                   <div className="review-description">
                     {review.description}
                   </div>

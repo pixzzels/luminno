@@ -6,6 +6,17 @@ async function listReviews() {
   });
 }
 
+async function createNewReview() {
+  const review = await Review.create(req.body);
+  return newReview = await Review.findOne({
+    where: {
+      id: review.id
+    },
+    include: User
+  });
+};
+
 module.exports = {
   listReviews,
+  createNewReview,
 }

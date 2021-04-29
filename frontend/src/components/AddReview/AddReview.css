@@ -1,0 +1,41 @@
+.reviewForm-container {
+  height: 800px;
+  width: 700px;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  border: 2px gold solid;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+section form.reviewForm h1 {
+  color: orange;
+}
+
+section form.reviewForm label {
+  margin-bottom: 10px;
+  color: orange;
+}
+
+section form.reviewForm select {
+  margin-bottom: 25px;
+}
+
+form.reviewForm ul.errors-list {
+  color: rgb(175, 90, 104);
+}
+
+.rating-select {
+  width: 200px;
+}
+
+.review-description {
+  /* margin: 10px; */
+  height: 200px;
+  width: 100%;
+}
