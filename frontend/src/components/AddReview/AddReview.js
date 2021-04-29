@@ -21,10 +21,6 @@ const AddReview = ({ listing_id }) => {
     if (description.length < 5) setErrors(...errors, 'Please enter a description more than 5 characters')
     setErrors([]);
     return dispatch(createReview({ description, score, user_id, listing_id }))
-      .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      });
   }
   return (
     <section className="reviewForm-container">
