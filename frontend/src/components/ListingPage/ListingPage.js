@@ -22,7 +22,7 @@ function ListingPage() {
 
   useEffect(() => {
     dispatch(getListings())
-  }, [])
+  }, [dispatch])
 
   if (!oneListing) {
     return null;

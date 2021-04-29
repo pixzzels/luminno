@@ -26,13 +26,14 @@
 }
 
 .listing-name {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight:lighter;
   margin: 30px;
 }
 
 .listing-price {
   margin: 30px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .add-to-cart-btn {
@@ -48,4 +49,5 @@
 .listing-page-reviews {
   width: 100%;
   border:1px solid lightslategray;
+  padding-left: 30px;
 }

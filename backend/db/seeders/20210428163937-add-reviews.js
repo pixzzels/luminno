@@ -3,8 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Reviews', [
-      { description: 'I LOVE this necklace!!! It’s so beautiful and the customer service is just as AMAZING!!! Absolutely love love love this!! Everything from the necklace itself to the beautiful and detailed packaging is absolutely gorgeous!!! Thank you so much guys!!', score: 5, user_id: 2, listing_id: 22},
-      { description: 'Exactly what I wanted and more!! Husband bought this for me for Valentine’s Day since I’m a soon to be Mama! It is so dainty and perfect! I never take it off! Will definitely purchase again from this shop! ❤️', score: 5, user_id: 2, listing_id: 1},
+      { description: 'I LOVE this necklace!!! It’s so beautiful and the customer service is just as AMAZING!!! Absolutely love love love this!! Everything from the necklace itself to the beautiful and detailed packaging is absolutely gorgeous!!! Thank you so much guys!!', score: 1, user_id: 2, listing_id: 1},
+      { description: 'Exactly what I wanted and more!! Husband bought this for me for Valentine’s Day since I’m a soon to be Mama! It is so dainty and perfect! I never take it off! Will definitely purchase again from this shop! ❤️', score: 3, user_id: 2, listing_id: 1},
       { description: 'I am OBSESSED with this necklace. It’s so dainty and sparkly. My skin is so sensitive to jewelry and I usually break out wearing certain things. I haven’t had one issue. Definitely a great buy, especially with Mother’s Day coming up ❤️', score: 5, user_id: 6, listing_id: 1},
       { description: 'This necklace comes beautifully packaged! Haven’t had the necklace for long to speak on quality but instantly fell in love as it was everything I wanted; dainty and elegant. Perfect statement piece for a new mama!', score: 5, user_id: 4, listing_id: 1},
       { description: 'Love this necklace! I’ve waited a long time to be called “Mama” and this was the first thing I bought for myself ❤️', score: 5, user_id: 10, listing_id: 1},
