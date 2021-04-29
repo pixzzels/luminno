@@ -22,7 +22,7 @@ import Button from '../Button';
 
 
 
-function ReviewModal({ text = 'button' }) {
+function ReviewModal({ text = 'button', listingId }) {
   const [showModal, setShowModal] = useState(false);
 
   const onClick = () => {
@@ -35,7 +35,7 @@ function ReviewModal({ text = 'button' }) {
       <Button onClick={onClick} text={text} />
       {showModal && (
         <Modal className="login-register-modal" onClose={() => setShowModal(false)}>
-          <AddReview />
+          <AddReview listing_id={listingId}Î/>
         </Modal>
       )}
     </>

@@ -23,10 +23,17 @@ export const getReviews = () => async dispatch => {
 };
 
 export const createReview = newReview => async dispatch => {
+  console.log("newReview", newReview)
+  const { description, score , user_id, listing_id } = newReview;
   const res = await csrfFetch('/api/reviews', { 
     method: 'POST',
-    body: JSON.stringify(newReview)
-  })
+    body: JSON.stringify({
+      description,
+      score,
+      user_id, 
+      listing_id,
+    })
+  });
 
   if(!res.ok) throw res;
   const review = await res.json();
