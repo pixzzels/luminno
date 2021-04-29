@@ -1,6 +1,6 @@
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS';
 
-const SHOW_ONE = 'listings/SHOW_ONE';
+// const SHOW_ONE = 'listings/SHOW_ONE';
 
 
 const load = list => ({

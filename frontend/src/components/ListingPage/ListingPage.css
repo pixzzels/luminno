@@ -48,4 +48,5 @@
 .listing-page-reviews {
   width: 100%;
   border:1px solid lightslategray;
+  padding-left: 30px;
 }
