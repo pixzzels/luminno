@@ -16,6 +16,7 @@ function Categories() {
     // return state.listings.list
   });
 
+  // console.log('category', category)
   // const sortList = (list) => {
   //   return list.sort((categoryA, categoryB) => {
   //     return categoryB.id - categoryA.id;
@@ -39,7 +40,7 @@ function Categories() {
     <div className="categories-container">
       {category.map((category) => {
         return (
-          <div className='category-link'>
+          <div key={category.name} className='category-link'>
             <Category category={category} />
           </div>
         );

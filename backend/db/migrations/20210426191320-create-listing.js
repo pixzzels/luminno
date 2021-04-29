@@ -10,7 +10,7 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(500)
       },
       listing_img: {
         allowNull: false,
@@ -18,7 +18,7 @@ module.exports = {
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING(500)
+        type: Sequelize.STRING
       },
       price: {
         allowNull: false,

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/HomePage";
+import ListingPage from "./components/ListingPage";
+
+import './index.css'
 
 
 function App() {
@@ -16,11 +18,14 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation className="Navigation" isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/listings/:id">
+            <ListingPage />
           </Route>
         </Switch>
       )}

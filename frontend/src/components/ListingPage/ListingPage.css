@@ -1,0 +1,51 @@
+.listing-page-info-review {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-image-container {
+  margin: 30px;
+}
+
+.listing-image-onpage {
+  margin: 30px;
+  width: 500px;
+  height: 500px;
+}
+
+.listing-details {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: right; */
+}
+
+.listing-name {
+  font-size: 30px;
+  margin: 30px;
+}
+
+.listing-price {
+  margin: 30px;
+  font-size: 30px;
+}
+
+.add-to-cart-btn {
+  margin: 30px;
+  width: 100px;
+}
+
+.listing-description {
+  margin: 30px;
+
+}
+
+.listing-page-reviews {
+  width: 100%;
+  border:1px solid lightslategray;
+}

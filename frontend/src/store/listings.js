@@ -1,6 +1,6 @@
 const LOAD_LISTINGS = 'listings/LOAD_LISTINGS';
 
-const ADD_ONE = 'listings/ADD_ONE';
+const SHOW_ONE = 'listings/SHOW_ONE';
 
 
 const load = list => ({
@@ -8,10 +8,10 @@ const load = list => ({
   list,
 });
 
-const addOneListing = listing => ({
-  type: ADD_ONE,
-  listing,
-});
+// const showOne = listing => ({
+//   type: SHOW_ONE,
+//   listing,
+// });
 
 
 export const getListings = () => async dispatch => {
@@ -23,13 +23,13 @@ export const getListings = () => async dispatch => {
   }
 };
 
-export const getOneListing = (listingId) => async dispatch => {
-  const res = await fetch(`/api/listings/${listingId}`)
-  if (!res.ok) throw res;
-  const listing = await res.json();
-  // console.log("FETCH LISTING: ",listing)
-  dispatch(addOneListing(listing))
-}
+// export const showOneListing = (listingId) => async dispatch => {
+//   const res = await fetch(`/api/listings/${listingId}`)
+//   if (!res.ok) throw res;
+//   const listing = await res.json();
+//   console.log('listing', listing)
+//   dispatch(showOne(listing))
+// }
 
 const initialState = []
 
@@ -44,27 +44,27 @@ const listingsReducer = (state = initialState, action) => {
       return {
         ...allListings,
         ...state,
-        list: action.list,
+        // list: action.list,
       };
     }
-    case ADD_ONE: {
-      if (!state[action.listing.id]) {
-        const newState = {
-          ...state,
-          [action.listing.id]: action.listing
-        };
-        const listingList = newState.list.map(id => newState[id]);
-        listingList.push(action.listing);
-        return newState;
-      }
-      return {
-        ...state,
-        [action.listing.id]: {
-          ...state[action.listing.id],
-          ...action.listing,
-        }
-      };
-    }
+    // case SHOW_ONE: {
+    //   if (!state[action.listing.id]) {
+    //     const newState = {
+    //       ...state,
+    //       [action.listing.id]: action.listing
+    //     };
+    //     const listingList = newState.list.map(id => newState[id]);
+    //     listingList.push(action.listing);
+    //     return newState;
+    //   }
+    //   return {
+    //     ...state,
+    //     [action.listing.id]: {
+    //       ...state[action.listing.id],
+    //       ...action.listing,
+    //     }
+    //   };
+    // }
     default:
       return state;
   }
