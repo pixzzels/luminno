@@ -4,12 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getReviews } from '../../store/reviews'
 import LoginFormModal from '../LoginFormModal';
 import ReviewModal from '../ReviewModal'
-import AddReview from '../ReviewModal'
 
 
 import './ShowReviews.css';
 
-function ReviewScore({ reviews, reviewNum }) {
+let count = 0;
+
+function ReviewScore({ review, reviewNum, listingId }) {
 
   let reviewScoreArr = [];
   // console.log("reviewNum", reviewNum)
@@ -25,11 +26,14 @@ function ReviewScore({ reviews, reviewNum }) {
     }
   }
 
+  // count++
+
   return (
     <>
       {reviewScoreArr.map((color) => {
+        count++
         return (
-          <svg key={reviews.id} className="star">
+          <svg key={count} className="star">
             <path stroke="black" strokeWidth="1.3" fill={color} d="M20.83,9.15l-6-.52L12.46,3.08h-.92L9.18,8.63l-6,.52L2.89,10l4.55,4L6.08,19.85l.75.55L12,17.3l5.17,3.1.75-.55L16.56,14l4.55-4Z" />Î
           </svg>
         )
@@ -40,14 +44,14 @@ function ReviewScore({ reviews, reviewNum }) {
 
 
 function ShowReviews({ listingId }) {
-  
+
   // console.log("listingId", listingId)
   const reviews = useSelector(state => {
     const allReviews = Object.values(state.review)
     return allReviews;
   })
   const sessionUser = useSelector(state => state.session.user);
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -83,12 +87,13 @@ function ShowReviews({ listingId }) {
   };
 
   let formattedDate;
-  let reviewScore;
+  // let reviewScore;
   reviews.map((review) => {
     if (review.id === listingId) {
       formattedDate = formatDate(review.User.createdAt)
-      reviewScore = review.score
+      // reviewScore = review.score
     }
+    return formattedDate;
   });
 
   let text;
@@ -98,18 +103,18 @@ function ShowReviews({ listingId }) {
   if (sessionUser) {
     text = 'Add Your Review!'
     sessionLinks = (
-      <ReviewModal text={text} />
+      <ReviewModal text={text} listingId={listingId} />
     );
   } else {
     text = 'Log in to Review!'
     sessionLinks = (
       <>
-      <LoginFormModal text={text} />
+        <LoginFormModal text={text} />
       </>
     );
   }
 
-  console.log("reviews", reviews)
+  // console.log("reviews", reviews)
   return (
     <div className="big-review-container">
       <div className="review-header">
@@ -142,7 +147,7 @@ function ShowReviews({ listingId }) {
                 <div className="review-information">
                   <div className='review-score'>
                     {/* {review.score} */}
-                    <ReviewScore listingId={listingId} reviews={reviews} reviewNum={review.score} />
+                    <ReviewScore listingId={listingId} review={review} reviewNum={review.score} />
                   </div>
                   <div className="review-description">
                     {review.description}
