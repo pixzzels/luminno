@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import './Category.css'
+import './Category.css';
 
 function Category({ category }) {
   // console.log("category", category)
@@ -10,6 +10,6 @@ function Category({ category }) {
       {category.name}
     </NavLink>
   )
-}
+};
 
 export default Category;

@@ -44,7 +44,7 @@ const listingsReducer = (state = initialState, action) => {
       return {
         ...allListings,
         ...state,
-        list: action.list,
+        // list: action.list,
       };
     }
     // case SHOW_ONE: {

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { showOneListing, getListings } from '../../store/listings'
+import { getListings } from '../../store/listings'
+import ShowReviews from '../ShowReviews';
 // import Button from '../Button';
 
 import './ListingPage.css'
@@ -43,7 +44,7 @@ function ListingPage() {
             {oneListing.name}
           </div>
           <div className="listing-price">
-            ${oneListing.price}.00
+            ${oneListing.price}
           </div>
           <button className="add-to-cart-btn">Add To Cart </button>
           <div className="listing-description">
@@ -52,7 +53,7 @@ function ListingPage() {
         </div>
       </div>
       <div className="listing-page-reviews">
-        Reviews
+        <ShowReviews listingId={oneListing.id} />
       </div>
 
     </div>
