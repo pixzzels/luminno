@@ -66,6 +66,10 @@ function ShowReviews({ listingId }) {
     return null;
   }
 
+  console.log("sessionUser", sessionUser)
+  console.log('reviews', reviews)
+  // console.log('revsess', reviews.user_id)
+
   // format sequelize.Date into Month and Day
   const formatDate = (unformattedDate) => {
     //only works for sequelize.DATE formatting
@@ -91,23 +95,45 @@ function ShowReviews({ listingId }) {
   };
 
   let formattedDate;
+  let oneReview = false;
   // let reviewScore;
   reviews.map((review) => {
     if (review.id === listingId) {
       formattedDate = formatDate(review.User.createdAt)
+      if (review.user_id === sessionUser.id) {
+        console.log("hello")
+        oneReview = true;
+      }
       // reviewScore = review.score
     }
     return formattedDate;
   });
 
+  reviews.map((review) => {
+    if (review.user_id === sessionUser.id) {
+      console.log("hello")
+      oneReview = true;
+    }
+    // reviewScore = review.score
+    return oneReview;
+  });
+
   let text;
+  console.log('boolean', oneReview)
 
 
   let sessionLinks;
-  if (sessionUser) {
+  if (sessionUser && oneReview === false) {
     text = 'Add Your Review!'
     sessionLinks = (
       <ReviewModal text={text} listingId={listingId} />
+    );
+  } else if (sessionUser && oneReview === true) {
+    text = 'Edit Your Review!'
+    sessionLinks = (
+      <>
+        <ReviewModal text={text} listingId={listingId} edit={true} />
+      </>
     );
   } else {
     text = 'Log in to Review!'
@@ -117,6 +143,10 @@ function ShowReviews({ listingId }) {
       </>
     );
   }
+
+  // if (sessionUser && sessionUser.id === reviews) {
+
+  // }
 
   // console.log("reviews", reviews)
   return (

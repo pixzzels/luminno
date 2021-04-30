@@ -1,6 +1,7 @@
 .listing-page-info-review {
   display: flex;
   flex-direction: column;
+  border: 1px red solid;
 }
 
 .listing-info-container {
@@ -48,6 +49,6 @@
 
 .listing-page-reviews {
   width: 100%;
-  border:1px solid lightslategray;
-  padding-left: 30px;
+  /* border:1px solid lightslategray; */
+  margin-left: 30px;
 }

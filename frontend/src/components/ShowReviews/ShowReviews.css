@@ -1,3 +1,6 @@
+.big-review-container {
+  margin-left: 0px;
+}
 
 div.review-header {
   display: flex;
@@ -6,11 +9,19 @@ div.review-header {
 
 div.review-header h2 {
   margin-right: 25px;
+  margin-left: 20px;
 }
 
 .review-container {
-  border-bottom: 1px solid grey;
+  border: 1px solid lightgray;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
   padding: 10px;
+  margin: 20px;
+  width: 90%;
+  /* margin-right: 0px; */
+  /* height: fit-content; */
 }
 
 .review-owner {
@@ -26,14 +37,12 @@ div.review-header h2 {
 
 .review-score {
   margin-bottom: 6px;
-
   /* border: 1px solid limegreen; */
 }
 
 .star {
   height: 25px;
   width: 25px;
-
 }
 
 .review-profilepic {
@@ -69,5 +78,6 @@ div.review-header h2 {
 
 .review-description {
   font-size: 16px;
-  color:rgb(61, 61, 61);
+  color: rgb(61, 61, 61);
+  height: 80px;
 }

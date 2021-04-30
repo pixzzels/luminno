@@ -2,28 +2,23 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import AddReview from '../AddReview';
 import Button from '../Button';
-// function LoginForm() {
-//   const [isRegister, setIsRegister] = useState(false);
-//   const onClick = () => {
-//     setIsRegister(!isRegister)
-//   }
-
-//   let component;
-//   if(isRegister){
-//     component = <SignupFormPage handleClick={onClick}/>
-//   } else{
-//     component = <LoginFormPage handleClick={onClick}/>
-//   }
-
-//   return (
-//     component
-//   );
-// }
+import EditReviewForm from '../EditReviewForm';
 
 
-
-function ReviewModal({ text = 'button', listingId }) {
+function ReviewModal({ text = 'button', listingId, edit = false }) {
   const [showModal, setShowModal] = useState(false);
+
+  console.log('edit', edit)
+
+  let component;
+
+  if (edit === false) {
+    component =
+      <AddReview listing_id={listingId} />
+  } else if (edit === true) {
+    component =
+      <EditReviewForm listing_id={listingId} />
+  }
 
   const onClick = () => {
     setShowModal(true)
@@ -35,7 +30,7 @@ function ReviewModal({ text = 'button', listingId }) {
       <Button onClick={onClick} text={text} />
       {showModal && (
         <Modal className="login-register-modal" onClose={() => setShowModal(false)}>
-          <AddReview listing_id={listingId}Î/>
+          {component}
         </Modal>
       )}
     </>

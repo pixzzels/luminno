@@ -26,6 +26,8 @@ router.get('/', asyncHandler(async function (req, res) {
 //   handleValidationErrors,
 // ]
 
+
+// Post Review
 router.post(
   '/',
   // validateReviewPost,
@@ -41,5 +43,24 @@ router.post(
     const review = await ReviewsRepository.createNewReview(content)
     return res.json(review)
   }));
+
+// Update Review
+router.put(
+  '/:id',
+  asyncHandler(async function (req, res) {
+    const review = await ReviewsRepository.updateReview(content);
+    return res.json(review);
+  })
+)
+
+// Delete Review
+router.delete(
+  '/:id',
+  asyncHandler(async function (req, res) {
+    // const { reviewId } = req.body;
+    const review = ReviewsRepository.deleteReview(reviewId);
+    return res.json({ review });
+  })
+)
 
 module.exports = router;
