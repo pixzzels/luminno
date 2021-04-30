@@ -18,6 +18,11 @@
   /* width:90em; */
 }
 
+.listingsBar-container h2 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
 div.listings-container-cat {
   /* max-width: 1000px; */
   max-height: 300px;

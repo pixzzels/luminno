@@ -28,9 +28,9 @@ function App() {
           <Route path="/listings/:id">
             <ListingPage />
           </Route>
-          <Route path="/category/:id">
+          {/* <Route path="/category/:id">
             <CategoryPage />
-          </Route>
+          </Route> */}
         </Switch>
       )}
     </>

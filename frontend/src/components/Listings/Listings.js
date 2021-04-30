@@ -33,7 +33,7 @@ function Listings() {
       <div className="listings-container">
         {category.map((category) => {
           return (
-            <div key={category.name} className='category-link'>
+            <div key={category.name} className='category-redirect-link'>
               <ListingsBar category={category} />
             </div>
           );

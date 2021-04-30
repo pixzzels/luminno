@@ -1,14 +1,96 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams, NavLink } from 'react-router-dom'
 
 import Listings from '../Listings';
 
-import Category from '../Category'
 import { getCategories } from '../../store/category'
+import { getListings } from '../../store/listings'
+
 
 import './HomePage.css'
 import '../Categories/Categories.css'
 
+const CategoryPage = ({ id }) => {
+
+  // const { id } = useParams();
+  // console.log(id)
+
+  const allCategoryListings = useSelector(state => {
+
+    const lists = Object.values(state.listing)
+    return lists
+
+  })
+  const [sort, setSort] = useState('')
+
+  if (sort === "asc") {
+    allCategoryListings.sort((a, b) => {
+      return a.price - b.price
+    })
+  }
+  else if (sort === "dec") {
+    allCategoryListings.sort((a, b) => {
+      return b.price - a.price
+    })
+  } else if (sort === 'recent') {
+    allCategoryListings.sort((a, b) => {
+      return b.id - a.id
+    })
+  }
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getListings())
+  }, [dispatch])
+
+  const newCatArr = allCategoryListings.filter((listing => listing.category_id == id))
+
+  return (
+    <div className="catPage-entire-cont">
+      <div className="btns-sort">
+        <label name="sort-options">Sort Listings By:</label>
+        <select name="sort-options" value={sort} onChange={(e) => setSort(e.target.value)}>
+          <option value="none"></option>
+          <option value="recent">Most Recent</option>
+          <option value="dec">Highest Price</option>
+          <option value="asc">Lowest Price</option>
+        </select>
+
+      </div>
+      <div className="all-list-cat">
+        {/* {listings} */}
+        {newCatArr.map((listing => {
+          // {console.log("listingId", listings.category_id, "id", id)}
+
+          return (
+            <section key={listing.id}>
+              <NavLink className="listing-page" to={`/listings/${listing.id}`}>
+                {console.log("listing", listing)}
+                <div className="listingsCat-container__listing">
+                  <div>
+                    <img
+                      className="listingsCat-container__listing-image"
+                      alt={listing.name}
+                      src={`${listing.listing_img}`}
+                    />
+                  </div>
+                  <div className="listingsCat-container__listing-name">
+                    {listing.name}
+                  </div>
+                  <div className="listingsCat-container__listing-price">
+                    ${listing.price}
+                  </div>
+                </div>
+              </NavLink>
+            </section>
+          )
+        }))}
+      </div>
+    </div>
+  )
+}
 
 function HomePage() {
   // const { id } = useParams();
@@ -21,8 +103,13 @@ function HomePage() {
   });
   const [content, setContent] = useState('');
 
-  console.log(content)
+  const [catNumArr, setCatNumArr] = useState()
 
+  const arr = []
+  arr.push(content)
+  console.log(arr)
+
+  console.log("content", content)
 
   const dispatch = useDispatch();
 
@@ -34,9 +121,13 @@ function HomePage() {
     return null;
   }
 
+  let component;
 
-  const changeContent = () => {
-
+  if (content === '') {
+    component =
+      <Listings />
+  } else {
+    component = <CategoryPage id={content} />
   }
 
 
@@ -45,21 +136,23 @@ function HomePage() {
       <div className="categories-container">
         {category.map((category) => {
           return (
-            <div 
-            key={category.name} 
-            value={category.name} 
-            className='category-link'
-            onChange={(e) => setContent(e.target.value)}
+            <button
+              key={category.name}
+              value={category.id}
+              className='category-link'
+              onClick={(e) => setContent(e.target.value)}
             >
-              <Category category={category} />
-            </div>
+              {category.name}
+              {/* <Category category={category} /> */}
+            </button>
           );
         })}
       </div>
       <div className="homepage">
         {/* <h1>This is my body</h1> */}
         {/* <Categories changeContent={changeContent} /> */}
-        <Listings />
+        {component}
+
       </div>
     </div>
 
