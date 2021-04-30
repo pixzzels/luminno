@@ -10,7 +10,7 @@ import './ShowReviews.css';
 
 let count = 0;
 
-function ReviewScore({ review, reviewNum, listingId }) {
+function ReviewScore({ reviewNum }) {
 
   let reviewScoreArr = [];
   // console.log("reviewNum", reviewNum)

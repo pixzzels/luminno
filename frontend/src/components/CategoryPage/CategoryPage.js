@@ -45,7 +45,7 @@ const CategoryPage = () => {
     allCategoryListings.sort((a, b) => {
       return b.id - a.id
     })
-  } 
+  }
 
 
 
@@ -75,8 +75,10 @@ const CategoryPage = () => {
   // console.log(id)
   // console.log("categoryListings", categoryListings)
 
+  const newCatArr = allCategoryListings.filter((listing => listing.category_id == id))
+
   return (
-    <div>
+    <div className="catPage-entire-cont">
       <div className="btns-sort">
         <label name="sort-options">Sort Listings By:</label>
         <select name="sort-options" value={sort} onChange={(e) => setSort(e.target.value)}>
@@ -90,38 +92,32 @@ const CategoryPage = () => {
       </div>
       <div className="all-list-cat">
         {/* {listings} */}
-        {allCategoryListings.map((listing => {
+        {newCatArr.map((listing => {
           // {console.log("listingId", listings.category_id, "id", id)}
 
           return (
-            <section>
-              <div className="catPage-listings-container">
-                <div key={listing.id}>
-                  {listing.category_id == id &&
-                    <NavLink className="listing-page" to={`/listings/${listing.id}`}>
-                      <div className="listingsCat-container__listing">
-                        <div>
-                          <img
-                            className="listingsCat-container__listing-image"
-                            alt={listing.name}
-                            src={`${listing.listing_img}`}
-                          />
-                        </div>
-                        <div className="listingsCat-container__listing-name">
-                          {listing.name}
-                        </div>
-                        <div className="listingsCat-container__listing-price">
-                          ${listing.price}
-                        </div>
-                      </div>
-                    </NavLink>
-                  }
+            <section key={listing.id}>
+              <NavLink className="listing-page" to={`/listings/${listing.id}`}>
+                {console.log("listing", listing)}
+                <div className="listingsCat-container__listing">
+                  <div>
+                    <img
+                      className="listingsCat-container__listing-image"
+                      alt={listing.name}
+                      src={`${listing.listing_img}`}
+                    />
+                  </div>
+                  <div className="listingsCat-container__listing-name">
+                    {listing.name}
+                  </div>
+                  <div className="listingsCat-container__listing-price">
+                    ${listing.price}
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             </section>
           )
         }))}
-
       </div>
     </div>
   )
