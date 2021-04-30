@@ -19,12 +19,13 @@
 }
 
 div.listings-container-cat {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   max-height: 300px;
   display:flex;
+  /* flex-wrap: wrap; */
   /* margin:  10px 10px 20px 10px; */
   background-color: #fdf2ea;
-  overflow: auto;
+  overflow: scroll;
   white-space: nowrap;
   /* border: 2px solid #52535f; */
   border-radius: 5px;

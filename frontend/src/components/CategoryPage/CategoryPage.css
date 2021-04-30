@@ -1,0 +1,42 @@
+.all-list-cat {
+  border: 1px green solid;
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: space-around;
+}
+
+.listingsCat-container__listing {
+  width: 180px;
+  height: 150px;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.listingsCat-container__listing:hover {
+  box-shadow: -1px 1px 5px 5px rgb(124 123 123 / 20%);
+}
+
+.listingsCat-container__listing-image {
+  max-height: 110px;
+  max-width: 150px;
+  float: inherit;
+}
+
+.listingsCat-container__listing-name {
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.listingsCat-container__listing-price {
+  font-weight: bold;
+}

@@ -18,12 +18,14 @@ function Listings() {
     return categories;
   });
 
+  
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(getCategories())
   }, [dispatch]);
-
+  
+  console.log("catBEgin", category)
   let component;
 
   if (content === '') {
@@ -37,12 +39,13 @@ function Listings() {
           );
         })}
       </div>
-  } else {
-    component =
-      <div className="listings-container">
-        <CategoryPage />
-      </div>
   }
+  // } else {
+  //   component =
+  //     <div className="listings-container">
+  //       <CategoryPage categories={category}/>
+  //     </div>
+  // }
 
   return (
     component
