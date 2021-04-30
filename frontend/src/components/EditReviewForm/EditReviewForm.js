@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { createReview } from '../../store/reviews'
+import { updateReview } from '../../store/reviews'
 
-import './AddReview.css'
+import './EditReviewForm.css'
 
 
-const AddReview = ({ listing_id }) => {
+const EditReviewForm = ({ listing_id }) => {
 
   const dispatch = useDispatch();
   const user_id = useSelector(state => state.session.user.id);
@@ -20,18 +20,18 @@ const AddReview = ({ listing_id }) => {
     if (description.length === '') setErrors(...errors, "Please add a description")
     if (description.length < 5) setErrors(...errors, 'Please enter a description more than 5 characters')
     setErrors([]);
-    return dispatch(createReview({ description, score, user_id, listing_id }))
+    return dispatch(updateReview({ description, score, user_id, listing_id }))
   }
   return (
     <section className="reviewForm-container">
       <form className="reviewForm" onSubmit={handleSubmit}>
-        <h1>Leave Us A Review!</h1>
+        <h1>Edit Your Review</h1>
         <ul className='errors-list'>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <label htmlFor="score">Select your star rating!</label>
+        <label htmlFor="score">Change your star rating!</label>
         <select name="score" value={score} className="rating-select"
           onChange={e => setScore(e.target.value)}>
           <option>Give A Rating</option>
@@ -44,7 +44,7 @@ const AddReview = ({ listing_id }) => {
         </select>
         <label htmlFor="description">Description</label>
         <textarea
-          className="review-description-input"
+          className="review-description"
           name="description"
           type="text"
           placeholder="Your review in here"
@@ -57,4 +57,4 @@ const AddReview = ({ listing_id }) => {
   )
 }
 
-export default AddReview;
+export default EditReviewForm;

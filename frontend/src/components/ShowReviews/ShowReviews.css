@@ -19,6 +19,8 @@ div.review-header h2 {
   border-bottom-left-radius: 30px;
   padding: 10px;
   margin: 20px;
+  width: 90%;
+  /* margin-right: 0px; */
   /* height: fit-content; */
 }
 
@@ -77,5 +79,5 @@ div.review-header h2 {
 .review-description {
   font-size: 16px;
   color: rgb(61, 61, 61);
-  height: fit-content;
+  height: 80px;
 }
