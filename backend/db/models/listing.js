@@ -25,11 +25,11 @@ module.exports = (sequelize, DataTypes) => {
   Listing.associate = function (models) {
     // associations can be defined here
     Listing.hasMany(models.Review, { foreignKey: 'listing_id' });
-    Listing.belongsToMany(models.User, {
-      foreignKey: 'listing_id',
-      otherKey: 'user_id',
-      through: 'Favorite'
-    });
+    // Listing.belongsToMany(models.User, {
+    //   foreignKey: 'listing_id',
+    //   otherKey: 'user_id',
+    //   through: 'Favorite'
+    // });
     Listing.belongsToMany(models.Tag, {
       foreignKey: 'listing_id',
       otherKey: 'tag_id',

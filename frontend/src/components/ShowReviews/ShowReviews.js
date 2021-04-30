@@ -97,26 +97,25 @@ function ShowReviews({ listingId }) {
   let formattedDate;
   let oneReview = false;
   // let reviewScore;
+  
   reviews.map((review) => {
     if (review.id === listingId) {
       formattedDate = formatDate(review.User.createdAt)
-      if (review.user_id === sessionUser.id) {
-        console.log("hello")
-        oneReview = true;
-      }
       // reviewScore = review.score
     }
     return formattedDate;
   });
 
-  reviews.map((review) => {
-    if (review.user_id === sessionUser.id) {
-      console.log("hello")
-      oneReview = true;
-    }
-    // reviewScore = review.score
-    return oneReview;
-  });
+  if (sessionUser) {
+    reviews.map((review) => {
+      if (review.user_id === sessionUser.id) {
+        console.log("hello")
+        oneReview = true;
+      }
+      // reviewScore = review.score
+      return oneReview;
+    });
+  }
 
   let text;
   console.log('boolean', oneReview)
