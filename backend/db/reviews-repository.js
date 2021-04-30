@@ -17,7 +17,30 @@ async function createNewReview(content) {
   });
 };
 
+async function updateReview(content) {
+  const id = details.id;
+  delete details.id;
+  console.log({ details, id });
+  await Review.update(
+    content,
+    { where: { id } }
+  );
+  return await Review.findByPk(id);
+}
+
+async function deleteReview(reviewId) {
+  const review = await Review.findByPk(reviewId);
+  if (!review) throw new Error('Cannot find item');
+
+  await Review.destroy({ where: { id: review.id } });
+  return Review.id;
+}
+
+
+
 module.exports = {
   listReviews,
   createNewReview,
+  updateReview,
+  deleteReview,
 }
