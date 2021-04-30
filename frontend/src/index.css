@@ -1,11 +1,18 @@
 /* TODO Add site wide styles */
-/* * {
-  background-color: #FAFDF3;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* background-color: #FAFDF3; */
+  /* box-sizing: border-box; */
 
-} */
+}
 div {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .Navigation {
   background-color: #FAFDF3;
+}
+
+body, ul, div, nav {
+  padding: 0px;
+  margin: 0px;
 }

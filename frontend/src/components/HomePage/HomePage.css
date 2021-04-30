@@ -1,3 +1,19 @@
 .homepage {
   background-color: #fdfbf7;
 }
+
+.category-link {
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  transition: box-shadow 1s;
+  border-radius: 10px;
+  background-color: #fdf4eb;
+  box-shadow: 0px 0px 0px transparent;
+  border: 0px solid transparent;
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.category-link:hover {
+  box-shadow: 0 0 3px #ccc;
+}

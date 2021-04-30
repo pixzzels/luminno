@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Category from '../Category'
+// import Category from '../Category'
 import { getCategories } from '../../store/category'
 
 import './Categories.css'
@@ -41,7 +41,7 @@ function Categories() {
       {category.map((category) => {
         return (
           <div key={category.name} className='category-link'>
-            <Category category={category} />
+            {/* <Category category={category} /> */}
           </div>
         );
       })}

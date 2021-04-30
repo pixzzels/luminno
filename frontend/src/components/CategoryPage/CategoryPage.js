@@ -1,26 +1,34 @@
-import { useState, useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, NavLink } from 'react-router-dom'
 
-import Listings from '../Listings';
-
-import { getCategories } from '../../store/category'
 import { getListings } from '../../store/listings'
 
+import './CategoryPage.css'
 
-import './HomePage.css'
-import '../Categories/Categories.css'
 
-const CategoryPage = ({ id }) => {
+const CategoryPage = () => {
 
-  // const { id } = useParams();
+  const { id } = useParams();
   // console.log(id)
 
   const allCategoryListings = useSelector(state => {
 
     const lists = Object.values(state.listing)
     return lists
-
+    // if (sortType === "dec") {
+    //   const dec = allCategoryListings.sort((a, b) => {
+    //     return a.price - b.price
+    //   })
+    // }
+    // else if (sortType === "asc") {
+    //   const asc = allCategoryListings.sort((a, b) => {
+    //     return b.price - a.price
+    //   })
+    // } else {
+    //   return lists
+    // }
   })
   const [sort, setSort] = useState('')
 
@@ -39,11 +47,33 @@ const CategoryPage = ({ id }) => {
     })
   }
 
+
+
+  // if (sort === "dec") {
+  //   const dec = allCategoryListings.sort((a, b) => {
+  //     return a.price - b.price
+  //   })
+  // }
+  // if (sort === "asc") {
+  //   const asc = allCategoryListings.sort((a, b) => {
+  //     return b.price - a.price
+  //   })
+  // }
+
+  // const categories
+
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getListings())
   }, [dispatch])
+
+  // console.log("listing", allCategoryListings.id)
+
+  // console.log("categories", categories)
+  // console.log("allCategoryListings", allCategoryListings)
+  // console.log(id)
+  // console.log("categoryListings", categoryListings)
 
   const newCatArr = allCategoryListings.filter((listing => listing.category_id == id))
 
@@ -56,6 +86,7 @@ const CategoryPage = ({ id }) => {
           <option value="recent">Most Recent</option>
           <option value="dec">Highest Price</option>
           <option value="asc">Lowest Price</option>
+
         </select>
 
       </div>
@@ -92,71 +123,4 @@ const CategoryPage = ({ id }) => {
   )
 }
 
-function HomePage() {
-  // const { id } = useParams();
-  const category = useSelector(state => {
-    // creates an array of the object values
-    const categories = Object.values(state.category)
-    // console.log("listings", listings)
-    return categories;
-    // return state.listings.list
-  });
-  const [content, setContent] = useState('');
-
-  const [catNumArr, setCatNumArr] = useState()
-
-  const arr = []
-  arr.push(content)
-  console.log(arr)
-
-  console.log("content", content)
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCategories())
-  }, [dispatch]);
-
-  if (!category) {
-    return null;
-  }
-
-  let component;
-
-  if (content === '') {
-    component =
-      <Listings />
-  } else {
-    component = <CategoryPage id={content} />
-  }
-
-
-  return (
-    <div>
-      <div className="categories-container">
-        {category.map((category) => {
-          return (
-            <button
-              key={category.name}
-              value={category.id}
-              className='category-link'
-              onClick={(e) => setContent(e.target.value)}
-            >
-              {category.name}
-              {/* <Category category={category} /> */}
-            </button>
-          );
-        })}
-      </div>
-      <div className="homepage">
-        {/* <h1>This is my body</h1> */}
-        {/* <Categories changeContent={changeContent} /> */}
-        {component}
-
-      </div>
-    </div>
-
-  )
-}
-
-export default HomePage;
+export default CategoryPage;

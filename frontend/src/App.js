@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage/HomePage";
 import ListingPage from "./components/ListingPage";
 
 import './index.css'
+import CategoryPage from "./components/CategoryPage";
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           <Route path="/listings/:id">
             <ListingPage />
           </Route>
+          {/* <Route path="/category/:id">
+            <CategoryPage />
+          </Route> */}
         </Switch>
       )}
     </>

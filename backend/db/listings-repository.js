@@ -6,7 +6,9 @@ async function listCategory() {
 }
 
 async function listListing() {
-  return await Listing.findAll();
+  return await Listing.findAll({
+    include: Category
+  });
 }
 
 async function listOneListing(id) {
