@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { useParams } from 'react-router-dom';
 
 import { getCategories } from '../../store/category'
-import CategoryPage from '../CategoryPage';
+// import CategoryPage from '../CategoryPage';
 import ListingsBar from '../ListingBar'
 import './Listings.css'
 
@@ -25,7 +25,7 @@ function Listings() {
     dispatch(getCategories())
   }, [dispatch]);
   
-  console.log("catBEgin", category)
+  // console.log("catBEgin", category)
   let component;
 
   if (content === '') {
