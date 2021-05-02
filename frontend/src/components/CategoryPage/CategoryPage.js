@@ -97,6 +97,7 @@ const CategoryPage = () => {
 
           return (
             <section key={listing.id}>
+
               <NavLink className="listing-page" to={`/listings/${listing.id}`}>
                 {console.log("listing", listing)}
                 <div className="listingsCat-container__listing">
@@ -118,9 +119,49 @@ const CategoryPage = () => {
             </section>
           )
         }))}
+
       </div>
     </div>
   )
 }
+
+// {/* <div className="all-list-cat">
+// {/* {listings} */}
+// {allCategoryListings.map((listing => {
+//   // {console.log("listingId", listings.category_id, "id", id)}
+
+//   return (
+//     <>
+//       {/* // <section className="catPage-listings-container" key={listing.id}> */}
+//       {/* <div className="catPage-listings-container">
+//         <div key={listing.id}> */}
+//       {listing.category_id == id &&
+//         <NavLink className="listing-page" to={`/listings/${listing.id}`}>
+//           {console.log("listing", listing)}
+//           <div className="listingsCat-container__listing">
+//             <div>
+//               <img
+//                 className="listingsCat-container__listing-image"
+//                 alt={listing.name}
+//                 src={`${listing.listing_img}`}
+//               />
+//             </div>
+//             <div className="listingsCat-container__listing-name">
+//               {listing.name}
+//             </div>
+//             <div className="listingsCat-container__listing-price">
+//               ${listing.price}
+//             </div>
+//           </div>
+//         </NavLink>
+//       }
+//       {/* </div>
+//       </div> */}
+//       {/* // </section> */}
+//     </>
+//   )
+// }))}
+
+// </div> */}
 
 export default CategoryPage;

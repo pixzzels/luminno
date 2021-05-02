@@ -126,6 +126,7 @@ function HomePage() {
   if (content === '') {
     component =
       <Listings />
+
   } else {
     component = <CategoryPage id={content} />
   }

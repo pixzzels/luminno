@@ -12,7 +12,7 @@ const AddReview = ({ listing_id }) => {
   const [description, setDescription] = useState('')
   const [score, setScore] = useState('');
   const [errors, setErrors] = useState([]);
-  console.log('score', score)
+  // console.log('score', score)
 
   const handleSubmit = (e) => {
     e.preventDefault();
