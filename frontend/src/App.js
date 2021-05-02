@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage/HomePage";
 import ListingPage from "./components/ListingPage";
 
 import './index.css'
+import Search from "./components/Search";
 // import CategoryPage from "./components/CategoryPage";
 
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/listings/:id">
             <ListingPage />
+          </Route>
+          <Route path="listings/search">
+            <Search />
           </Route>
           {/* <Route path="/category/:id">
             <CategoryPage />
