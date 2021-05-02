@@ -9,6 +9,7 @@ import CategoryPage from "./components/CategoryPage";
 
 import './index.css'
 import Search from "./components/Search";
+import Footer from "./components/Footer";
 // import CategoryPage from "./components/CategoryPage";
 
 
@@ -38,6 +39,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
