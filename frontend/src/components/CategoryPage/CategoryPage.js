@@ -80,7 +80,7 @@ const CategoryPage = () => {
   return (
     <div className="catPage-entire-cont">
       <div className="btns-sort">
-        <label name="sort-options">Sort Listings By:</label>
+        <label name="sort-options">Sort Listings By: </label>
         <select name="sort-options" value={sort} onChange={(e) => setSort(e.target.value)}>
           <option value="none"></option>
           <option value="recent">Most Recent</option>

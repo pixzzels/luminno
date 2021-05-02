@@ -48,7 +48,7 @@ function Navigation({ isLoaded }) {
         </li>
       </div>
       <div className='navBar__lower'>
-        {/* <Categories /> */}
+        <Categories />
       </div>
     </div>
   );

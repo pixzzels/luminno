@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 // import Category from '../Category'
 import { getCategories } from '../../store/category'
@@ -16,15 +17,6 @@ function Categories() {
     // return state.listings.list
   });
 
-  // console.log('category', category)
-  // const sortList = (list) => {
-  //   return list.sort((categoryA, categoryB) => {
-  //     return categoryB.id - categoryA.id;
-  //   })
-  // };
-
-  // let sortedList = sortList(category)
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,21 +26,19 @@ function Categories() {
   if (!category) {
     return null;
   }
-  // console.log("category", category)
-  // category.pop();
+
   return (
     <div className="categories-container">
       {category.map((category) => {
         return (
-          <div key={category.name} className='category-link'>
-            {/* <Category category={category} /> */}
-          </div>
+          <NavLink className='category-link' to={`/category/${category.id}`}>
+            <div key={category.name} >
+              {category.name}
+            </div>
+          </NavLink>
         );
       })}
     </div>
-    // <div className="categories-container">
-    //   <Category />
-    // </div>
   )
 }
 
