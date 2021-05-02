@@ -28,6 +28,7 @@ div.review-header h2 {
   /* margin-bottom: 6px; */
   /* border: 1px solid blue; */
   display: flex;
+  position: relative;
 }
 
 .review-user-container {
@@ -74,6 +75,24 @@ div.review-header h2 {
 
 .review-information {
   padding-left: 48px;
+  /* display: flex; */
+}
+
+#delete-review-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: grey;
+  border: none;
+  font-size: 25px;
+  background: none;
+  transition: color .5s;
+}
+
+#delete-review-btn:hover {
+  color: rgb(194, 66, 66);
+
+  /* font-weight: bold; */
 }
 
 .review-description {

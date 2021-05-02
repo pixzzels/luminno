@@ -30,10 +30,16 @@ async function updateReview(content) {
 
 async function deleteReview(reviewId) {
   const review = await Review.findByPk(reviewId);
+  console.log('newnewreviewId', reviewId)
   if (!review) throw new Error('Cannot find item');
 
   await Review.destroy({ where: { id: review.id } });
   return Review.id;
+  // const review = await Review.destroy({
+  //   where: {
+  //     id: req.params.id
+  //   }
+  // });
 }
 
 

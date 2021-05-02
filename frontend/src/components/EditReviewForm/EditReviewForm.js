@@ -44,7 +44,8 @@ const EditReviewForm = ({ listing_id }) => {
         </select>
         <label htmlFor="description">Description</label>
         <textarea
-          className="review-description"
+          // className="review-description"
+          id="edit-from-description"
           name="description"
           type="text"
           placeholder="Your review in here"

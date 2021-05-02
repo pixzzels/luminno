@@ -20,9 +20,9 @@ const update = (review) => ({
   review
 })
 
-const remove = (reviewId) => ({
+const remove = (review) => ({
   type: REMOVE_REVIEW,
-  reviewId
+  review
 });
 
 export const getReviews = () => async dispatch => {
@@ -53,8 +53,25 @@ export const createReview = newReview => async dispatch => {
   return review;
 }
 
+export const removeReview = (id) => async dispatch => {
+  const { reviewId } = id;
+  console.log("newreviewId", reviewId)
+  const res = await csrfFetch(`/api/reviews/${reviewId}`, {
+    method: 'DELETE',
+    body: JSON.stringify({
+      reviewId
+    })
+  });
+
+  if (!res.ok) throw res;
+
+  // const review = await res.json()
+  dispatch(remove(reviewId))
+  return reviewId;
+}
+
 export const updateReview = (review) => async dispatch => {
-  const res = await fetch(`/api/review/${review.id}`, {
+  const res = await csrfFetch(`/api/review/${review.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -67,24 +84,8 @@ export const updateReview = (review) => async dispatch => {
     dispatch(update(data));
     return data;
   }
-} 
-
-export const removeReview = (id) => async dispatch => {
-  const { reviewId } = id;
-  const res = await fetch(`/api/reviews${reviewId}`, {
-    method: 'REMOVE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ reviewId })
-  });
-
-  if (res.ok) {
-    const revId = await res.json();
-    dispatch(remove(revId));
-    // return revId;
-  }
 }
+
 
 const initialState = [];
 
@@ -116,7 +117,9 @@ const reviewsReducer = (state = initialState, action) => {
     }
     case REMOVE_REVIEW: {
       const newState = { ...state };
-      delete newState[action.itemId];
+      console.log('actionReview', action)
+      delete newState[action.review];
+      console.log("newState", newState)
       return newState;
     }
     default:
