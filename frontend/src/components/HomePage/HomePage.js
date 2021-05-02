@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import Listings from '../Listings';
 
