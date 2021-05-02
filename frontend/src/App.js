@@ -5,9 +5,11 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage/HomePage";
 import ListingPage from "./components/ListingPage";
+import CategoryPage from "./components/CategoryPage";
 
 import './index.css'
-import CategoryPage from "./components/CategoryPage";
+import Search from "./components/Search";
+// import CategoryPage from "./components/CategoryPage";
 
 
 function App() {
@@ -28,9 +30,12 @@ function App() {
           <Route path="/listings/:id">
             <ListingPage />
           </Route>
-          {/* <Route path="/category/:id">
+          <Route path="/listings/search">
+            <Search />
+          </Route>
+          <Route path="/category/:id">
             <CategoryPage />
-          </Route> */}
+          </Route>
         </Switch>
       )}
     </>

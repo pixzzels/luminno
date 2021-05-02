@@ -1,9 +1,9 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 
-const { handleValidationErrors } = require('../../utils/validation');
+// const { handleValidationErrors } = require('../../utils/validation');
 // const { requireAuth } = require('../../utils/auth');
-const { check } = require('express-validator');
+// const { check } = require('express-validator');
 
 
 const ReviewsRepository = require('../../db/reviews-repository')
@@ -57,9 +57,11 @@ router.put(
 router.delete(
   '/:id',
   asyncHandler(async function (req, res) {
-    // const { reviewId } = req.body;
+    const { reviewId } = req.body
+    console.log('reqbody', req.body)
     const review = ReviewsRepository.deleteReview(reviewId);
-    return res.json({ review });
+    console.log("reviewId", reviewId)
+    return res.json(review);
   })
 )
 

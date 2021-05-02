@@ -23,12 +23,11 @@ function Navigation({ isLoaded }) {
     );
   }
 
-  // style={{textDecoration: 'none', color: 'blue'}}
   return (
     <div className="navBar">
       <div className='navBar__main'>
         <li className='brandName'>
-          <NavLink className='brandName'exact to="/">Etsy</NavLink>
+          <NavLink className='brandName' exact to="/">Etsy</NavLink>
         </li>
         <div>
           <form className="navBar__upper-container">
@@ -37,9 +36,11 @@ function Navigation({ isLoaded }) {
               type='search'
               placeholder='Search'>
             </input>
-            <button className="navBar__search-icon">
-              <i className="fas fa-search"></i>
-            </button>
+            <NavLink className='searchBar' to="/listings/search">
+              <button className="navBar__search-icon">
+                <i className="fas fa-search"></i>
+              </button>
+            </NavLink>
           </form>
         </div>
         <li>
@@ -47,7 +48,7 @@ function Navigation({ isLoaded }) {
         </li>
       </div>
       <div className='navBar__lower'>
-        {/* <Categories /> */}
+        <Categories />
       </div>
     </div>
   );
