@@ -117,7 +117,7 @@ function ShowReviews({ listingId }) {
     reviews.map((review) => {
       if (review.user_id === sessionUser.id) {
         if (review.listing_id === listingId) {
-          console.log("hello")
+          // console.log("hello")
           oneReview = true;
         }
       }
@@ -127,7 +127,7 @@ function ShowReviews({ listingId }) {
   }
 
   let text;
-  console.log('boolean', oneReview)
+  // console.log('boolean', oneReview)
 
 
   let sessionLinks;

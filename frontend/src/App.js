@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage/HomePage";
 import ListingPage from "./components/ListingPage";
 
 import './index.css'
-import CategoryPage from "./components/CategoryPage";
+// import CategoryPage from "./components/CategoryPage";
 
 
 function App() {

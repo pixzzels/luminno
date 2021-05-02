@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import Listings from '../Listings';
 
@@ -67,7 +67,7 @@ const CategoryPage = ({ id }) => {
           return (
             <section key={listing.id}>
               <NavLink className="listing-page" to={`/listings/${listing.id}`}>
-                {console.log("listing", listing)}
+                {/* {console.log("listing", listing)} */}
                 <div className="listingsCat-container__listing">
                   <div>
                     <img
@@ -103,13 +103,13 @@ function HomePage() {
   });
   const [content, setContent] = useState('');
 
-  const [catNumArr, setCatNumArr] = useState()
+  // const [catNumArr, setCatNumArr] = useState()
 
   const arr = []
   arr.push(content)
-  console.log(arr)
+  // console.log(arr)
 
-  console.log("content", content)
+  // console.log("content", content)
 
   const dispatch = useDispatch();
 

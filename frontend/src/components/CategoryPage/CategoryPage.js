@@ -98,7 +98,7 @@ const CategoryPage = () => {
           return (
             <section key={listing.id}>
               <NavLink className="listing-page" to={`/listings/${listing.id}`}>
-                {console.log("listing", listing)}
+                {/* {console.log("listing", listing)} */}
                 <div className="listingsCat-container__listing">
                   <div>
                     <img

@@ -8,7 +8,7 @@ import EditReviewForm from '../EditReviewForm';
 function ReviewModal({ text = 'button', listingId, edit = false }) {
   const [showModal, setShowModal] = useState(false);
 
-  console.log('edit', edit)
+  // console.log('edit', edit)
 
   let component;
 

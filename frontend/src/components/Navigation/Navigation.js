@@ -23,7 +23,6 @@ function Navigation({ isLoaded }) {
     );
   }
 
-  // style={{textDecoration: 'none', color: 'blue'}}
   return (
     <div className="navBar">
       <div className='navBar__main'>
