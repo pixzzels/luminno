@@ -30,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     //   otherKey: 'user_id',
     //   through: 'Favorite'
     // });
-    Listing.belongsToMany(models.Tag, {
+    Listing.belongsToMany(models.User, {
       foreignKey: 'listing_id',
-      otherKey: 'tag_id',
+      otherKey: 'user_id',
       through: 'ListingsTag'
     });
     Listing.belongsTo(models.Category, { foreignKey: 'category_id' })

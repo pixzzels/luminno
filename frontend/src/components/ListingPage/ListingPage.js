@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 import { getListings } from '../../store/listings'
 import ShowReviews from '../ShowReviews';
@@ -28,6 +28,9 @@ function ListingPage() {
     return null;
   }
 
+  const addToCart = () => {
+    
+  }
 
   return (
     <div className="listing-page-info-review">
@@ -46,7 +49,12 @@ function ListingPage() {
           <div className="listing-price">
             ${oneListing.price}
           </div>
-          <button className="add-to-cart-btn">Add To Cart </button>
+          {/* <NavLink to="/profile/cart"> */}
+          <button 
+          onClick={addToCart}
+          className="add-to-cart-btn"
+          >Add To Cart </button>
+          {/* </NavLink> */}
           <div className="listing-description">
             {oneListing.description}
           </div>
