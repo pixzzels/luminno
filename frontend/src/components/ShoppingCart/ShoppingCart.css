@@ -32,7 +32,7 @@ div.sc-container__listing {
   border-bottom: 1px solid lightgray;
   display: grid;
   grid-template-areas: 'img name price';
-  grid-column: 1fr 3fr 1fr;
+  /* grid-column: 1fr 4fr 1fr; */
 }
 
 .sc-listing-page-link {
@@ -50,6 +50,7 @@ div.sc-container__listing {
 }
 
 .sc-container__listing-details {
+  width: 1100px;
   grid-area: name;
   margin: 10px;
   display: flex;
@@ -71,6 +72,8 @@ div.sc-container__listing {
 
 .sc-container__listing-price {
   grid-area: price;
+  display: flex;
+  flex-direction: row-reverse;
   margin: 10px;
 }
 

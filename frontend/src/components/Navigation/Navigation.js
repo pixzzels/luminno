@@ -12,7 +12,12 @@ function Navigation({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <div>
+        <NavLink to="/profile/cart">
+          <button className="cart-btn">Cart</button>
+        </NavLink>
+        <ProfileButton user={sessionUser} />
+      </div>
     );
   } else {
     sessionLinks = (
