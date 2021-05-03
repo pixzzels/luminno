@@ -11,6 +11,7 @@ async function addToCart(data) {
   const { user_id, listing_id } = data;
   content = { user_id, listing_id }
   const cart = await Cart.create(content)
+  console.log("cart", cart)
   return cart;
 }
 
@@ -22,7 +23,7 @@ async function deleteCartItem(data) {
       user_id, listing_id
     }
   })
-  return cart
+  return cart;
 }
 
 module.exports = {

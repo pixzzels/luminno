@@ -30,20 +30,20 @@ export const getItems = (id) => async dispatch => {
 };
 
 export const addItem = (content) => async (dispatch) => {
-  const { listingId, userId } = content;
+  const { listing_id, user_id } = content;
 
   // Cross Site Request Forgeries Middleware
-  const res = await csrfFetch(`/api/profile/cart/${listingId}`, {
+  const res = await csrfFetch(`/api/profile/cart/${listing_id}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ listingId, userId }),
+    body: JSON.stringify({ listing_id, user_id }),
   })
 
   if (!res.ok) throw res;
   const item = await res.json();
-  dispatch(addItem(item))
+  dispatch(add(item))
   return item;
 };
 
@@ -77,7 +77,6 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...allCartItems,
         ...state,
-
       }
     }
     case ADD_ITEM: {
@@ -85,6 +84,7 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         [action.item.id]: action.item
       }
+      return newState;
     }
     case REMOVE_ITEM: {
       const newState = { ...state };

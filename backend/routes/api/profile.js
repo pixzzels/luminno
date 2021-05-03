@@ -16,5 +16,16 @@ router.get(
   })
 );
 
+router.post(
+  '/cart/:id/',
+	asyncHandler(async (req, res) => {
+		const { listing_id, user_id } = req.body;
+		content = { listing_id, user_id };
+    // console.log('content', content)
+		const item = await CartRepository.addToCart(content);
+		return res.json(item);
+	})
+)
+
 
 module.exports = router;
