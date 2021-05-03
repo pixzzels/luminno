@@ -1,4 +1,3 @@
-// const { commerce } = require("faker");
 const { Category, Listing } = require("./models");
 
 async function listCategory() {
