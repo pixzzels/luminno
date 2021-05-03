@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { getItems } from '../../store/cart';
+import { getItems, removeItem } from '../../store/cart';
 import { getListings } from '../../store/listings';
 
 import './ShoppingCart.css';
@@ -18,6 +18,8 @@ const ShoppingCart = () => {
     // console.log("state.cart", state.cart.lists)
     return items;
   })
+
+  const [listingId, setListingId] = useState();
   // const cartItems = useSelector(state => state.cart)
 
   // console.log("allListings", allListings)
@@ -49,9 +51,10 @@ const ShoppingCart = () => {
   })
 
   if (!cartItems) return null
+  // const user_id = sessionUser.id
 
   // const removeCartItem = () => {
-  //   dispatch()
+  //   dispatch(removeItem({ listing_id, user_id }))
   // }
 
   return (
@@ -79,9 +82,9 @@ const ShoppingCart = () => {
                     {oneItem.Listing.name}
                   </div>
                 </NavLink>
-                <button 
-                className="remove-cart-item-btn"
-                // onClick={removeCartItem}
+                <button
+                  className="remove-cart-item-btn"
+                  // onClick={removeCartItem}
                 >Remove</button>
               </div>
               <div className="sc-container__listing-price">
