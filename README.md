@@ -1,6 +1,8 @@
 # Luminno
-Luminno is a web application that allows users to see listings, video games, publish game reviews, and catalog games into game shelves that can be customized. This was inspired by [Goodreads](https://www.goodreads.com/), a website where individuals can search for books, create reviews, catalog books into libraries, discuss all things books, and more.
-#### Live link: [ggPlays](https://ggplays.herokuapp.com/)
+Luminno is a web application that allows users to see listings, add listings to cart, buy items(simulation). This was inspired by [Etsy](https://www.etsy.com/), a global online marketplace, where people come together to make, sell, buy, and collect unique items.
+The twist on Luminno is that it is a template for those who succeed and wish to get off Etsy. With Luminno, they can add their own listings to their own website instead of having it a part of a bigger community.
+
+#### Live link: [luminno]
 
 ***
 
@@ -43,13 +45,12 @@ Luminno is a web application that allows users to see listings, video games, pub
 ***
 
 ### Code Snippets
-#### Query for all shelves in a Gameshelf that belongs to a specific user with constraints.
 
+***
 
 ### Wiki Pages
-#### [API Documentation](https://github.com/Hieu-Ma/ggplays/wiki/API-Documentation)
-#### [Database Schema](https://github.com/Hieu-Ma/ggplays/wiki/Database-Schema)
-#### [Feature List](https://github.com/Hieu-Ma/ggplays/wiki/Feature-List)
+#### [Database Schema](https://github.com/pixzzels/luminno/wiki/Database-Schema)
+#### [Feature List](https://github.com/pixzzels/luminno/wiki/Feature-List)
 
 ***
 
