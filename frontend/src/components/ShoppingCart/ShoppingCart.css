@@ -1,0 +1,119 @@
+.shoppingCart-container {
+  margin: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+.shoppingCart-container h2 {
+  margin-left: 30px;
+}
+
+.shoppingCart-container span {
+  display:flex;
+  flex-direction: row-reverse;
+  padding-right: 30px;
+
+  color: gray;
+}
+
+.line {
+  border-bottom: 1px solid lightgray;
+}
+
+/* .catPage-entire-cont {
+  border: 1px solid pink;
+  margin: 10px;
+  background-color: #fdfbf7;
+} */
+
+div.sc-container__listing {
+  padding: 25px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  display: grid;
+  grid-template-areas: 'img name price';
+  grid-column: 1fr 3fr 1fr;
+}
+
+.sc-listing-page-link {
+  text-decoration: none;
+  color: black;
+}
+
+.sc-container__listing-image {
+  grid-area: img;
+  margin: 10px;
+  border-radius: 10px;
+  max-height: 100px;
+  max-width: 100px;
+  /* float: inherit; */
+}
+
+.sc-container__listing-details {
+  grid-area: name;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sc-container__listing-name:hover {
+  color: rgb(196, 159, 92);
+}
+
+.remove-cart-item-btn {
+  height: 30px;
+  width: 100px;
+  background-color: rgb(255, 236, 219);
+  border: 2px solid peachpuff;
+  border-radius: 5px;
+}
+
+.sc-container__listing-price {
+  grid-area: price;
+  margin: 10px;
+}
+
+/* .all-list-cat {
+  padding: 10px;
+  margin: 10px 30px 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+/* .listingsCat-container__listing {
+  width: 180px;
+  height: 150px;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid lightgray;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .listingsCat-container__listing:hover {
+  box-shadow: -1px 1px 5px 5px rgb(124 123 123 / 20%);
+} */
+
+/* .sc-container__listing-image {
+  border-radius: 10px;
+  max-height: 100px;
+  max-width: 100px;
+  float: inherit;
+} */
+
+/* .listingsCat-container__listing-name {
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 10px;
+  overflow: hidden;
+  font-size: 15px;
+} */
+
+/* .listingsCat-container__listing-price {
+  font-weight: bold;
+} */

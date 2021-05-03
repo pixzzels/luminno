@@ -4,9 +4,9 @@ const LOAD_CART = 'cart/LOAD_CART';
 const ADD_ITEM = 'cart/ADD_ITEM';
 const REMOVE_ITEM = 'cart/REMOVE_ITEM';
 
-const load = list => ({
+const load = lists => ({
   type: LOAD_CART,
-  list,
+  lists,
 });
 
 const add = item => ({
@@ -19,19 +19,21 @@ const remove = (item) => ({
   item
 });
 
-export const getItems = () => async dispatch => {
-  const res = await fetch('/api/cart')
+export const getItems = (id) => async dispatch => {
+  // console.log('backendId', id)
+  const res = await fetch(`/api/profile/cart/${id}`)
 
   if (!res.ok) throw res;
   const item = await res.json();
+  // console.log('item', item)
   dispatch(load(item))
-}
+};
 
 export const addItem = (content) => async (dispatch) => {
   const { listingId, userId } = content;
 
   // Cross Site Request Forgeries Middleware
-  const res = await csrfFetch(`/api/cart/${listingId}`, {
+  const res = await csrfFetch(`/api/profile/cart/${listingId}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,7 +50,7 @@ export const addItem = (content) => async (dispatch) => {
 export const removeItem = (id) => async dispatch => {
   const { listingId } = id;
   console.log("listingId", listingId)
-  const res = await csrfFetch(`/api/cart/${listingId}`, {
+  const res = await csrfFetch(`/api/profile/cart/${listingId}`, {
     method: 'DELETE',
     body: JSON.stringify({
       listingId
@@ -68,8 +70,14 @@ const cartReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case LOAD_CART: {
+      const allCartItems = {}
+      action.lists.forEach((item) => {
+        allCartItems[item.id] = item
+      })
       return {
+        ...allCartItems,
         ...state,
+
       }
     }
     case ADD_ITEM: {
