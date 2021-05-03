@@ -4,6 +4,7 @@ import sessionReducer from './session';
 import categoryReducer from './category';
 import listingsReducer from './listings';
 import reviewsReducer from './reviews';
+import cartReducer from './cart';
 
 
 const rootReducer = combineReducers({
@@ -11,6 +12,8 @@ const rootReducer = combineReducers({
   category: categoryReducer,
   listing: listingsReducer,
   review: reviewsReducer,
+  cart: cartReducer,
+
 });
 
 let enhancer;

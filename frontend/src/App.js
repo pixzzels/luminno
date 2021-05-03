@@ -10,6 +10,7 @@ import CategoryPage from "./components/CategoryPage";
 import './index.css'
 import Search from "./components/Search";
 import Footer from "./components/Footer";
+import ShoppingCart from "./components/ShoppingCart";
 // import CategoryPage from "./components/CategoryPage";
 
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/category/:id">
             <CategoryPage />
+          </Route>
+          <Route path="/profile/cart">
+            <ShoppingCart />
           </Route>
         </Switch>
       )}

@@ -39,12 +39,17 @@
 
 .add-to-cart-btn {
   margin: 30px;
-  width: 100px;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(255, 236, 219);
+  border: 2px solid peachpuff;
+  border-radius: 5px;
 }
 
 .listing-description {
   margin: 30px;
-
 }
 
 .listing-page-reviews {

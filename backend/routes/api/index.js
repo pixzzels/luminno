@@ -4,12 +4,14 @@ const usersRouter = require('./users.js');
 const listingsRouter = require('./listings');
 const categoriesRouter = require('./categories');
 const reviewsRouter = require('./reviews')
+const profileRouter = require('./profile')
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/listings' , listingsRouter);
 router.use('/categories', categoriesRouter)
 router.use('/reviews', reviewsRouter)
+router.use('/profile', profileRouter)
 
 // router.post('/test', function (req, res) {
 //   res.json({ requestBody: req.body });

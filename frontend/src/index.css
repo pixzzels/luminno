@@ -13,7 +13,7 @@ div {
 }
 
 body, ul, div, nav {
-  background-color: #fdfbf7;
+  /* background-color: #fdfbf7; */
   padding: 0px;
   margin: 0px;
 }

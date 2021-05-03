@@ -23,6 +23,16 @@ li {
   margin-top: 30px;
 }
 
+.cart-btn {
+  margin-right: 25px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(255, 236, 219);
+  border: 2px solid peachpuff;
+  border-radius: 5px;
+}
+
 .brandName {
   font-size: 40px;
   text-decoration: none;
