@@ -30,9 +30,13 @@ function ListingPage() {
   if (!oneListing) {
     return null;
   }
-  
-  const user_id = sessionUser.id
-  const listing_id = parseInt(id)
+  let user_id;
+  let listing_id;
+  if (sessionUser) {
+    user_id = sessionUser.id
+    listing_id = parseInt(id)
+
+  }
 
   const addToCart = () => {
     dispatch(addItem({ listing_id, user_id }))
