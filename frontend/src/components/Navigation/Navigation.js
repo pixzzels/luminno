@@ -14,7 +14,9 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <div>
         <NavLink to="/profile/cart">
-          <button className="cart-btn">Cart</button>
+          <button 
+          className="cart-btn"
+          >Cart</button>
         </NavLink>
         <ProfileButton user={sessionUser} />
       </div>
@@ -32,7 +34,7 @@ function Navigation({ isLoaded }) {
     <div className="navBar">
       <div className='navBar__main'>
         <li className='brandName'>
-          <NavLink className='brandName' exact to="/">Etsy</NavLink>
+          <NavLink className='brandName' exact to="/">Luminno</NavLink>
         </li>
         <div>
           <form className="navBar__upper-container">
