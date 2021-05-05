@@ -38,12 +38,12 @@ const ShoppingCart = () => {
   cartItems.forEach((item) => {
     cartArr.push(item.Listing)
     if (!item.Listing) {
-      console.log('item.Listing', item.Listing)
+      // console.log('item.Listing', item.Listing)
       setUpdate(!update)
     }
   })
 
-  console.log({ cartArr })
+  // console.log({ cartArr })
 
   return (
     <div className="shoppingCart-container">
@@ -51,7 +51,7 @@ const ShoppingCart = () => {
       <span>Price</span>
       <span className="line"></span>
       {cartArr.map((item) => {
-        { console.log('item', item) }
+        // { console.log('item', item) }
         return (
           <section className="sc-listing-page" key={item.id}>
 
