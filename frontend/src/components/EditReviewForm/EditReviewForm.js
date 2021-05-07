@@ -12,7 +12,6 @@ const EditReviewForm = ({ listing_id }) => {
   const [description, setDescription] = useState('')
   const [score, setScore] = useState('');
   const [errors, setErrors] = useState([]);
-  // console.log('score', score)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +43,6 @@ const EditReviewForm = ({ listing_id }) => {
         </select>
         <label htmlFor="description">Description</label>
         <textarea
-          // className="review-description"
           id="edit-from-description"
           name="description"
           type="text"

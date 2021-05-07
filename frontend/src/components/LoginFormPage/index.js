@@ -72,7 +72,6 @@ function LoginFormPage({ handleClick }) {
           </label>
         </div>
         <button type="submit">Log In</button>
-        {/* <h1>Don't Have An Account?</h1> */}
         <button onClick={demoSubmit} type="button">Demo Log In</button>
       </form>
     </>

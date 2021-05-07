@@ -7,13 +7,10 @@ import './Listings.css'
 
 function Listings() {
 
-  const [content, setContent] = useState('');
-
   const category = useSelector(state => {
     const categories = Object.values(state.category)
     return categories;
   });
-
 
   const dispatch = useDispatch();
 

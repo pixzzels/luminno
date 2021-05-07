@@ -10,7 +10,6 @@
   margin: 20px;
   padding: 20px;
   border-radius: 5px;
-
 }
 
 section form.reviewForm h1 {
@@ -35,7 +34,6 @@ form.reviewForm ul.errors-list {
 }
 
 .review-description-input {
-  /* margin: 10px; */
   height: 200px;
   width: 100%;
 }

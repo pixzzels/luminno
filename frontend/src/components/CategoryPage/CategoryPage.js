@@ -11,7 +11,6 @@ import './CategoryPage.css'
 const CategoryPage = () => {
 
   const { id } = useParams();
-  // console.log(id)
 
   const allCategoryListings = useSelector(state => {
 
@@ -58,15 +57,12 @@ const CategoryPage = () => {
 
       </div>
       <div className="all-list-cat">
-        {/* {listings} */}
         {newCatArr.map((listing => {
-          // {console.log("listingId", listings.category_id, "id", id)}
 
           return (
             <section key={listing.id}>
 
               <NavLink className="listing-page" to={`/listings/${listing.id}`}>
-                {/* {console.log("listing", listing)} */}
                 <div className="listingsCat-container__listing">
                   <div>
                     <img
@@ -83,10 +79,11 @@ const CategoryPage = () => {
                   </div>
                 </div>
               </NavLink>
+
             </section>
           )
+          
         }))}
-
       </div>
     </div>
   )

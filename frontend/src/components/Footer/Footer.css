@@ -1,7 +1,6 @@
 .footer-container {
   display: flex;
   background-color: #333333;
-  /* border: 1px solid red; */
   height: 100px;
   color: white;
   align-items: center;
@@ -16,11 +15,8 @@
   width: 55px;
   overflow: hidden;
   justify-content: center;
-  /* border: .1px black solid; */
   border-radius: 50%;
   background-color: white;
-  /* padding-right: 2px;
-  padding-bottom: 2px; */
   margin-left: 30px;
 }
 

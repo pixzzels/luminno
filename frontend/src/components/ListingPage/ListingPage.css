@@ -1,7 +1,7 @@
 .listing-page-info-review {
   display: flex;
   flex-direction: column;
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 .listing-info-container {
