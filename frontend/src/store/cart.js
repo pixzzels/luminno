@@ -30,7 +30,7 @@ export const getItems = (id) => async dispatch => {
 };
 
 export const addItem = (content) => async (dispatch) => {
-  const { listing_id, user_id } = content;
+  const { user_id, listing_id } = content;
 
   // Cross Site Request Forgeries Middleware
   const res = await csrfFetch(`/api/profile/cart/${listing_id}`, {

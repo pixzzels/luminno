@@ -9,6 +9,7 @@ import './ShoppingCart.css';
 
 const ShoppingCart = () => {
   const sessionUser = useSelector(state => state.session.user)
+  const user_id = parseInt(sessionUser.id)
 
   // const cartItems = useSelector(state => {
   //   const items = Object.values(state.cart)
@@ -19,7 +20,8 @@ const ShoppingCart = () => {
   const cartItems = useSelector(state => state.cart.cartItems)
   console.log("test", cartItems)
 
-  const [update, setUpdate] = useState(false)
+  const [listingId, setListingId] = useState()
+  console.log('listingid', listingId)
 
   const dispatch = useDispatch();
 
@@ -27,7 +29,13 @@ const ShoppingCart = () => {
     dispatch(getItems(sessionUser.id))
   }, [dispatch, sessionUser.id]);
 
+  // useEffect(() => {
+  //     dispatch(removeItem({ user_id, listing_id }))
+  // }, [dispatch, listing_id])
+
   if (!cartItems) return null
+
+
 
   let total = 0
   // cartItems.forEach((item) => console.log("itemListing", item))
@@ -47,6 +55,10 @@ const ShoppingCart = () => {
   // })
 
   // console.log({ cartArr })
+
+  const removeCartItem = () => {
+    // dispatch(removeItem({ user_id, listing_id }))
+  }
 
   return (
     <div className="shoppingCart-container">
@@ -75,8 +87,10 @@ const ShoppingCart = () => {
                 </NavLink>
                 <button
                   className="remove-cart-item-btn"
-                // onClick={removeCartItem}
-                >Remove</button>
+                  value={item.id}
+                  // onClick={setListingId}
+                  onClick={(e) => setListingId(e.target.value)}
+                >Remove{item.id}</button>
               </div>
               <div className="sc-container__listing-price">
                 ${item.price}
