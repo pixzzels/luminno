@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
 
-import { getItems, removeItem } from '../../store/cart';
-
-
-// const cartItems = useSelector(state => state.cart.cartItems)
-
+import { removeItem } from '../../store/cart';
 
 const CartItems = ({ user_id, listing_id, name, listing_img, price, change }) => {
 
@@ -18,11 +14,8 @@ const CartItems = ({ user_id, listing_id, name, listing_img, price, change }) =>
         change();
 
     }
-    //   console.log("listing_id", listing_id)
     return (
         <section className="sc-listing-page" key={listing_id}>
-
-            {/* {console.log("listing", listing)} */}
             <div className="sc-container__listing">
                 <div>
                     <img
@@ -39,9 +32,7 @@ const CartItems = ({ user_id, listing_id, name, listing_img, price, change }) =>
                     </NavLink>
                     <button
                         className="remove-cart-item-btn"
-                        //   value={item.id}
                         onClick={removeCartItem}
-                    //   onClick={(e) => setListingId(e.target.value)}
                     >Remove</button>
                 </div>
                 <div className="sc-container__listing-price">

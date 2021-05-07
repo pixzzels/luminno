@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 
-import { getItems, removeItem } from '../../store/cart';
-import { getListings } from '../../store/listings';
+import { getItems } from '../../store/cart';
 import CartItems from '../CartItems';
 
 import './ShoppingCart.css';
@@ -34,7 +32,6 @@ const ShoppingCart = () => {
             Items you add to cart will show up here
           </div>
         <span className="line"></span>
-
         <span>Subtotal: $0</span>
       </div>
     )
@@ -44,11 +41,9 @@ const ShoppingCart = () => {
     setContent(!content)
   }
 
-
   let total = 0
 
   cartItems.map((item) => {
-    // console.log('item', item)
     total += item.price
   })
 

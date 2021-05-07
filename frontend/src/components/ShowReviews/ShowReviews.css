@@ -20,13 +20,9 @@ div.review-header h2 {
   padding: 10px;
   margin: 20px;
   width: 90%;
-  /* margin-right: 0px; */
-  /* height: fit-content; */
 }
 
 .review-owner {
-  /* margin-bottom: 6px; */
-  /* border: 1px solid blue; */
   display: flex;
   position: relative;
 }
@@ -38,7 +34,6 @@ div.review-header h2 {
 
 .review-score {
   margin-bottom: 6px;
-  /* border: 1px solid limegreen; */
 }
 
 .star {
@@ -75,7 +70,6 @@ div.review-header h2 {
 
 .review-information {
   padding-left: 48px;
-  /* display: flex; */
 }
 
 #delete-review-btn {
@@ -91,8 +85,6 @@ div.review-header h2 {
 
 #delete-review-btn:hover {
   color: rgb(194, 66, 66);
-
-  /* font-weight: bold; */
 }
 
 .review-description {

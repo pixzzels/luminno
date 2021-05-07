@@ -65,7 +65,6 @@ export const removeReview = (id) => async dispatch => {
 
   if (!res.ok) throw res;
 
-  // const review = await res.json()
   dispatch(remove(reviewId))
   return reviewId;
 }
@@ -85,7 +84,6 @@ export const updateReview = (review) => async dispatch => {
     return data;
   }
 }
-
 
 const initialState = [];
 

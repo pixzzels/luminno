@@ -16,7 +16,6 @@ export const getCategories = () => async dispatch => {
 
 const initialState = []
 
-
 const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_CATEGORY: {

@@ -13,19 +13,16 @@ let count = 0;
 function ReviewScore({ reviewNum }) {
 
   let reviewScoreArr = [];
-  // console.log("reviewNum", reviewNum)
 
   for (let i = 0; i < reviewNum; i++) {
     reviewScoreArr.push('khaki')
   }
-  // console.log('initial arr', reviewScoreArr)
 
   if (reviewScoreArr.length < 5) {
     for (let i = reviewScoreArr.length; i < 5; i++) {
       reviewScoreArr.push('white')
     }
   }
-
   // count++
 
   return (
@@ -42,10 +39,8 @@ function ReviewScore({ reviewNum }) {
   )
 }
 
-
 function ShowReviews({ listingId }) {
 
-  // console.log("listingId", listingId)
   const reviews = useSelector(state => {
     const allReviews = Object.values(state.review)
     allReviews.sort((a, b) => {
@@ -63,17 +58,9 @@ function ShowReviews({ listingId }) {
     dispatch(getReviews())
   }, [dispatch, reviewDelete])
 
-  // useEffect(() => {
-    
-  // })
-
   if (!reviews) {
     return null;
   }
-
-  // console.log("sessionUser", sessionUser)
-  // console.log('reviews', reviews)
-  // console.log('revsess', reviews.user_id)
 
   // format sequelize.Date into Month and Day
   const formatDate = (unformattedDate) => {
@@ -121,14 +108,11 @@ function ShowReviews({ listingId }) {
           oneReview = true;
         }
       }
-      // reviewScore = review.score
       return oneReview;
     });
   }
 
   let text;
-  // console.log('boolean', oneReview)
-
 
   let sessionLinks;
   if (sessionUser && oneReview === false) {
@@ -152,12 +136,6 @@ function ShowReviews({ listingId }) {
     );
   }
 
-  // if (sessionUser && sessionUser.id === reviews) {
-
-  // }
-
-  // console.log("reviews", reviews)
-
   const deleteReviewButton = (id) => {
     let result = window.confirm("Are you sure you want to delete your review?")
     if (result) {
@@ -178,7 +156,6 @@ function ShowReviews({ listingId }) {
             {review.listing_id === listingId &&
               <div className="review-container">
                 <div className="review-owner">
-                  {/* {console.log('username', review.User)} */}
                   <div className="review-user-container">
                     <img
                       className="review-profilepic"
@@ -202,7 +179,6 @@ function ShowReviews({ listingId }) {
                 <div className="review-information">
 
                   <div className='review-score'>
-                    {/* {review.score} */}
                     <ReviewScore listingId={listingId} review={review} reviewNum={review.score} />
                   </div>
                   <div className="review-description">

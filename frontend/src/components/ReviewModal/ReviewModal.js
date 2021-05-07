@@ -8,8 +8,6 @@ import EditReviewForm from '../EditReviewForm';
 function ReviewModal({ text = 'button', listingId, edit = false }) {
   const [showModal, setShowModal] = useState(false);
 
-  // console.log('edit', edit)
-
   let component;
 
   if (edit === false) {
@@ -26,7 +24,6 @@ function ReviewModal({ text = 'button', listingId, edit = false }) {
 
   return (
     <>
-      {/* <button onClick={() => setShowModal(true)}>Log In</button> */}
       <Button onClick={onClick} text={text} />
       {showModal && (
         <Modal className="login-register-modal" onClose={() => setShowModal(false)}>
