@@ -19,13 +19,23 @@ router.get(
 
 router.post(
   '/cart/:id/',
-	asyncHandler(async (req, res) => {
-		const { listing_id, user_id } = req.body;
-		content = { listing_id, user_id };
+  asyncHandler(async (req, res) => {
+    const { listing_id, user_id } = req.body;
+    content = { listing_id, user_id };
     // console.log('content', content)
-		const item = await CartRepository.addToCart(content);
-		return res.json(item);
-	})
+    const item = await CartRepository.addToCart(content);
+    return res.json(item);
+  })
+)
+
+router.delete(
+  '/cart/:id/delete',
+  asyncHandler(async (req, res) => {
+    const { user_id, listing_id } = req.body;
+    content = { user_id, listing_id };
+    const deletedItem = await CartRepository.deleteCartItem(content)
+    return res.json(deletedItem)
+  })
 )
 
 module.exports = router;

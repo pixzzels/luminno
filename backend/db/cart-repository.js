@@ -15,19 +15,19 @@ async function addToCart(data) {
   return cart;
 }
 
-// async function deleteCartItem(data) {
-//   const { user_id, listing_id } = data;
-//   // content = {user_id, listing_id}
-//   const cart = await Cart.destroy({
-//     where: {
-//       user_id, listing_id
-//     }
-//   })
-//   return cart;
-// }
+async function deleteCartItem(data) {
+  const { user_id, listing_id } = data;
+  // content = {user_id, listing_id}
+  const cart = await Cart.destroy({
+    where: {
+      user_id, listing_id
+    }
+  })
+  return cart;
+}
 
 module.exports = {
   listCartItems,
   addToCart,
-  // deleteCartItem,
+  deleteCartItem,
 }

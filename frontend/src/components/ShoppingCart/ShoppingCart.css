@@ -20,11 +20,11 @@
   border-bottom: 1px solid lightgray;
 }
 
-/* .catPage-entire-cont {
-  border: 1px solid pink;
-  margin: 10px;
-  background-color: #fdfbf7;
-} */
+.cart-nothing-text {
+  margin-left: 25px;
+  font-size: 20px;
+  color: grey;
+}
 
 div.sc-container__listing {
   padding: 25px;
@@ -50,12 +50,13 @@ div.sc-container__listing {
 }
 
 .sc-container__listing-details {
-  width: 1100px;
+  width: 100%;
   grid-area: name;
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .sc-container__listing-name:hover {

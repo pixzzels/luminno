@@ -48,20 +48,21 @@ export const addItem = (content) => async (dispatch) => {
 };
 
 export const removeItem = (id) => async dispatch => {
-  const { listingId } = id;
-  console.log("listingId", listingId)
-  const res = await csrfFetch(`/api/profile/cart/${listingId}`, {
+  const { user_id, listing_id } = id;
+  console.log("listing_id", listing_id)
+  const res = await csrfFetch(`/api/profile/cart/${listing_id}/delete`, {
     method: 'DELETE',
     body: JSON.stringify({
-      listingId
+      user_id,
+      listing_id
     })
   });
 
   if (!res.ok) throw res;
 
   // const review = await res.json()
-  dispatch(remove(listingId))
-  return listingId;
+  dispatch(remove(listing_id))
+  return listing_id;
 };
 
 const initialState = [];
