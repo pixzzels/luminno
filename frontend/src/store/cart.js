@@ -24,9 +24,9 @@ export const getItems = (id) => async dispatch => {
   const res = await fetch(`/api/profile/cart/${id}`)
 
   if (!res.ok) throw res;
-  const item = await res.json();
+  const items = await res.json();
   // console.log('item', item)
-  dispatch(load(item))
+  dispatch(load(items))
 };
 
 export const addItem = (content) => async (dispatch) => {
@@ -75,8 +75,9 @@ const cartReducer = (state = initialState, action) => {
         allCartItems[item.id] = item
       })
       return {
-        ...allCartItems,
         ...state,
+        ...allCartItems,
+        cartItems: action.lists
       }
     }
     case ADD_ITEM: {
