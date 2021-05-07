@@ -10,11 +10,14 @@ import './ShoppingCart.css';
 const ShoppingCart = () => {
   const sessionUser = useSelector(state => state.session.user)
 
-  const cartItems = useSelector(state => {
-    const items = Object.values(state.cart)
-    // console.log("state.cart", state.cart.lists)
-    return items;
-  })
+  // const cartItems = useSelector(state => {
+  //   const items = Object.values(state.cart)
+  //   // console.log("state.cart", state.cart.lists)
+  //   return items;
+  // })
+
+  const cartItems = useSelector(state => state.cart.cartItems)
+  console.log("test", cartItems)
 
   const [update, setUpdate] = useState(false)
 
@@ -22,9 +25,9 @@ const ShoppingCart = () => {
 
   useEffect(() => {
     dispatch(getItems(sessionUser.id))
-  }, [dispatch, sessionUser.id, update]);
+  }, [dispatch, sessionUser.id]);
 
-  if (cartItems.length < 1) return null
+  if (!cartItems) return null
 
   let total = 0
   // cartItems.forEach((item) => console.log("itemListing", item))
@@ -34,14 +37,14 @@ const ShoppingCart = () => {
     total += item.price
   })
 
-  const cartArr = []
-  cartItems.forEach((item) => {
-    cartArr.push(item.Listing)
-    if (!item.Listing) {
-      // console.log('item.Listing', item.Listing)
-      setUpdate(!update)
-    }
-  })
+  // const cartArr = []
+  // cartItems.forEach((item) => {
+  //   cartArr.push(item.Listing)
+  //   if (!item.Listing) {
+  //     // console.log('item.Listing', item.Listing)
+  //     setUpdate(!update)
+  //   }
+  // })
 
   // console.log({ cartArr })
 
@@ -50,7 +53,7 @@ const ShoppingCart = () => {
       <h2>Shopping Cart</h2>
       <span>Price</span>
       <span className="line"></span>
-      {cartArr.map((item) => {
+      {cartItems.map((item) => {
         // { console.log('item', item) }
         return (
           <section className="sc-listing-page" key={item.id}>

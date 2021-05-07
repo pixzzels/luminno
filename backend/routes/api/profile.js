@@ -11,8 +11,9 @@ router.get(
     // console.log('backendId', id)
     const cartItems = await CartRepository.listCartItems(id);
     // console.log('cartItems', cartItems)
+    const userCart = cartItems.map((item) => item.Listing)
 
-    return res.json(cartItems)
+    return res.json(userCart)
   })
 );
 
