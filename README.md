@@ -2,7 +2,7 @@
 Luminno is a web application that allows users to see listings, add listings to cart, buy items(simulation). This was inspired by [Etsy](https://www.etsy.com/), a global online marketplace, where people come together to make, sell, buy, and collect unique items.
 The twist on Luminno is that it is a template for those who succeed and wish to get off Etsy. With Luminno, they can add their own listings to their own website instead of having it a part of a bigger community.
 
-#### Live link: [luminno]
+#### Live link: [luminno](https://luminno.herokuapp.com/)
 
 ***
 
