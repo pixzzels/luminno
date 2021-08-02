@@ -1,14 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import Categories from '../Categories';
+import Button from '../Button';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
-  const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
 
+  const sessionUser = useSelector(state => state.session.user);
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+  };
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -18,7 +25,8 @@ function Navigation({ isLoaded }) {
           className="cart-btn"
           >Cart</button>
         </NavLink>
-        <ProfileButton user={sessionUser} />
+        {/* <ProfileButton user={sessionUser} /> */}
+        <Button onClick={logout} text={"Log Out"}>Log Out</Button>
       </div>
     );
   } else {
