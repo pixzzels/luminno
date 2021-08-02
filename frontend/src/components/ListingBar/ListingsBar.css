@@ -47,7 +47,7 @@ div.listingsBar-container__listing {
 }
 
 .listingsBar-container__listing:hover {
-  box-shadow: -1px 1px 5px 4px rgb(124 123 123 / 20%);
+  box-shadow: -1px 1px 13px 6px rgb(124 123 123 / 20%);
 }
 
 .listingsBar-container__listing-image {
