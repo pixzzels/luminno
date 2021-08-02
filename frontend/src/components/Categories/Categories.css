@@ -19,7 +19,7 @@
   margin-top:15px;
   width: 0px;
   background: transparent;
-  transition: width 1s ease, background-color .5s ease;
+  transition: width .5s ease, background-color .5s ease;
 }
 
 .category-link:hover:after {

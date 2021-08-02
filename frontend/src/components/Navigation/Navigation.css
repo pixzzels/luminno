@@ -19,6 +19,7 @@ li {
   border-radius: 10px;
   padding-left: 15px;
   margin-top: 30px;
+  outline: none;
 }
 
 .cart-btn {

@@ -48,7 +48,7 @@ function Navigation({ isLoaded }) {
             <input
               className="navBar__search"
               type='search'
-              placeholder='Search'>
+              placeholder='Feature not available yet'>
             </input>
             <NavLink className='searchBar' to="/listings/search">
               <button className="navBar__search-icon">
